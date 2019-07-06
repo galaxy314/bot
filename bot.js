@@ -14,9 +14,16 @@ client.on('message', message => {
     }
     
     messageID = message.author.id;
-        if(command === 'id'){
-            message.reply(messageID);
+    if(command === 'id'){
+        message.reply(messageID);
     }
+    
+    if(messageID === 186874605443612672){
+        if(command === 'creator'){
+           message.reply('Dad?');
+        }
+    }
+    
 });
 
 
