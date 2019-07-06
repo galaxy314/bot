@@ -22,6 +22,10 @@ client.on('message', message => {
            message.reply('Dad?');
     }
     
+    if(messageID === '452904501163196426' && command === 'inspire'){
+           message.reply('Mom?');
+    }
+    
 });
 
 
