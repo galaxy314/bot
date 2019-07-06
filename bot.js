@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const userID = Username;
+const userID = Spoon#1391;
 
 client.on('ready', () => {
     console.log('I am ready!');
