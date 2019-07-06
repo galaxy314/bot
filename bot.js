@@ -14,7 +14,7 @@ client.on('message', message => {
     	message.reply('yeet');
     }
     
-    let id = message.sender.id;
+    let id = message.author.id;
     if(id === userID){
         if(command === 'psst'){
             message.reply('Gay');
