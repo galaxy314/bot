@@ -6,13 +6,8 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if (message.content === 'jah') {
-    	message.reply('yeet');
-  	}
-    if (message.content === 'Jah') {
-    	message.reply('yeet');
-  	}
-    if (message.content === 'JAH') {
+    let command = message.content.toLowerCase()
+    if (command === 'jah') {
     	message.reply('yeet');
   	}
 });
