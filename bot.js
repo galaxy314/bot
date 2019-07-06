@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const userID = 186874605443612672;
+const userID = Username;
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -14,8 +14,7 @@ client.on('message', message => {
     	message.reply('yeet');
     }
     
-    let id = message.author.id;
-    if(id === userID){
+    if(message.author === userID){
         if(command === 'psst'){
             message.reply('Gay');
         }
