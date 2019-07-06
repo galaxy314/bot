@@ -16,9 +16,9 @@ client.on('message', message => {
     
     const userID = "186874605443612672"
     
-    if(!message.sender === userID){
+    if(message.sender === userID){
         if(message.content === 'psst'){
-            message.channel.send('YEET');
+            message.channel.send('Gay');
         }
     }
 });
