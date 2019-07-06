@@ -18,7 +18,7 @@ client.on('message', message => {
         message.reply(messageID);
     }
     userGuild = message.author.guild;
-    if(command = 'guild'){
+    if(command === 'guild'){
        message.reply(userGuild);
     }
     
