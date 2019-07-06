@@ -18,10 +18,8 @@ client.on('message', message => {
         message.reply(messageID);
     }
     
-    if(messageID === 186874605443612672){
-        if(command === 'creator'){
+    if(messageID === 186874605443612672 && command === 'creator'){
            message.reply('Dad?');
-        }
     }
     
 });
