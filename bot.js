@@ -13,7 +13,7 @@ client.on('message', message => {
     	message.reply('yeet');
   	}
     
-    let args = message.content.split(" ").slice(1);
+    let args = message.content.split(" ");
     if (command === "changeNick") {
     client.user.setUsername(args).then(user => message.reply(`My new nickname is ${user.username}!`)).catch(console.error);
   }
