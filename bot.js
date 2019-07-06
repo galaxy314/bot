@@ -13,10 +13,9 @@ client.on('message', message => {
     	message.reply('yeet');
     }
     
-    if(message.author.id === 186874605443612672){
-        if(command === 'psst'){
-            message.reply('Gay');
-        }
+    messageID = message.author.id;
+        if(command === 'id'){
+            message.reply(messageID);
     }
 });
 
