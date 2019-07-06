@@ -21,13 +21,13 @@ client.on('message', message => {
     if(messageID === '186874605443612672' && command === 'creator'){
         message.reply('Dad?');
     }else{
-        message.reply('You are not my creator')
+        message.reply('You are not my creator');
     }
     
     if(messageID === '452904501163196426' && command === 'inspire'){
            message.reply('Mom?');
     }else{
-           message.reply('You are not my inspiration')    
+           message.reply('You are not my inspiration');    
     }
     
 });
