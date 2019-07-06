@@ -20,14 +20,14 @@ client.on('message', message => {
     
     if(messageID === '186874605443612672' && command === 'creator'){
         message.reply('Dad?');
-    }else if(messageID !== '186874605443612672'){
+    }else if(messageID !== '186874605443612672' && command === 'creator'){
         message.reply('You are not my creator');
     }
     
     if(messageID === '452904501163196426' && command === 'inspire'){
            message.reply('Mom?');
-    }else if(messageID !== '452904501163196426'){
-           message.reply('You are not my inspiration');    
+    }else if(messageID !== '452904501163196426' && command === 'inspire'){
+           message.reply('You are not my inspiration'); 
     }
     
 });
