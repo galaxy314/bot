@@ -6,18 +6,23 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
+    let args = message.content.slice(prefix.length).trim().split(' ');
     if (message.author.bot) return;
     
     let command = message.content.toLowerCase()
     if (command === 'jah') {
     	message.reply('yeet');
-  	}
+    }
     
-    let args = message.content.split(" ");
-    if (command === "changeNick") {
-    client.user.setUsername(args).then(user => message.reply(`My new nickname is ${user.username}!`)).catch(console.error);
-  }
+    const userID = "186874605443612672"
+    
+    if(!message.sender === userID){
+        if(message.content === 'psst'){
+            message.channel.send('YEET');
+        }
+    }
 });
+
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);//where BOT_TOKEN is the token of our bot 
