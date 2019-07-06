@@ -17,6 +17,10 @@ client.on('message', message => {
     if(command === 'id'){
         message.reply(messageID);
     }
+    userGuild = message.author.guild;
+    if(command = 'guild'){
+       message.reply(userGuild);
+    }
     
     if(messageID === '186874605443612672' && command === 'creator'){
         message.reply('Dad?');
