@@ -1,12 +1,12 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const userID = 186874605443612672;
 
 client.on('ready', () => {
     console.log('I am ready!');
 });
 
 client.on('message', message => {
-    let args = message.content.slice(prefix.length).trim().split(' ');
     if (message.author.bot) return;
     
     let command = message.content.toLowerCase()
@@ -14,11 +14,9 @@ client.on('message', message => {
     	message.reply('yeet');
     }
     
-    const userID = 186874605443612672;
-    
     if(message.sender === userID){
         if(command === 'psst'){
-            message.channel.send('Gay');
+            message.reply('Gay');
         }
     }
 });
