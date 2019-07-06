@@ -14,7 +14,7 @@ client.on('message', message => {
     	message.reply('yeet');
     }
     
-    const userID = "186874605443612672"
+    const userID = 186874605443612672;
     
     if(message.sender === userID){
         if(command === 'psst'){
