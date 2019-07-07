@@ -7,13 +7,16 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.author.bot) return;
+    messageID = message.author.id;
     
     let command = message.content.toLowerCase()
     if (command === 'jah') {
-    	message.reply('yeet');
+        if(messageID === '465586014430429206'){
+            message.reply('JASON DERULO');
+        }else{
+    	    message.reply('yeet');
     }
-    
-    messageID = message.author.id;
+        
     if(command === 'id'){
         message.reply(messageID);
     }
