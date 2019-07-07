@@ -10,10 +10,9 @@ client.on('message', message => {
     messageID = message.author.id;
     
     let command = message.content.toLowerCase()
-    if (command === 'jah') {
-        if(messageID === '465586014430429206'){
+    if(messageID === '465586014430429206' && command === 'jah'){
             message.reply('JASON DERULO');
-        }else{
+    }else if(messageID !== '465586014430429206' && command === 'jah'){
     	    message.reply('yeet');
     }
         
