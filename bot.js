@@ -15,7 +15,11 @@ client.on('message', message => {
     }else if(messageID !== '465586014430429206' && command === 'jah'){
     	    message.reply('yeet');
     }
-        
+    if(command === ‘yeet’){
+            message.reply(‘only jah my dude’);
+    }
+
+
     if(command === 'id'){
         message.reply(messageID);
     }
