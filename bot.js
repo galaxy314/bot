@@ -16,6 +16,8 @@ client.on('message', message => {
     	    message.reply('yeet');
     }else if(command === 'jah yeet'){
             message.reply('JAH YOTE');
+    }else if(command === 'jah chicken'){
+            message.reply('jah chicken butt');
     }
 
     if(command === 'id'){
