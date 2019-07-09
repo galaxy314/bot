@@ -14,6 +14,8 @@ client.on('message', message => {
             message.reply('JASON DERULO');
     }else if(messageID !== '465586014430429206' && command === 'jah'){
     	    message.reply('yeet');
+    }else if(command === 'jah yeet'){
+            message.reply('JAH YOTE');
     }
 
     if(command === 'id'){
