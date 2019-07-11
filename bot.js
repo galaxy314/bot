@@ -3,10 +3,10 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
     console.log('I am ready!');
-    client.user.setActivity('WATCHING EVERYTHING...');
 });
 
 client.on('message', message => {
+    client.user.setActivity('WATCHING EVERYTHING...');    
     if (message.author.bot) return;
     const messageID = message.author.id;
     const command = message.content.toLowerCase();
