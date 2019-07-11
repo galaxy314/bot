@@ -55,7 +55,8 @@ client.on('message', message => {
             description: "This is a test embed to showcase what they look like and what they can do.",
             fields: [{
                 name: "Commands",
-                value: "each command starts with the prefix jah(capitilization doesn't matter)/nThe basic commands are.../njah, which makes the bot yeet/njah yeet, which makes the bot yote/njah bruh, the bots bruhment/njah id and jah guild, id of the user, the guild the user is in"
+                value: "each command starts with the prefix jah(capitilization doesn't matter) /n The basic commands are... /n jah, which makes the bot yeet /n jah yeet, which makes the bot yote /n jah bruh, the bots bruhment /n jah id and jah guild, id of the user, the guild the user is in",
+                inline:true
               }
             ],
             timestamp: new Date(),
