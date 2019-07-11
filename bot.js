@@ -50,14 +50,31 @@ client.on('message', message => {
               name: client.user.username,
               icon_url: client.user.avatarURL
             },
-            title: "This is an embed",
-            url: "http://google.com",
-            description: "This is a test embed to showcase what they look like and what they can do.",
-            fields: [{
+            fields: [
+                {
                 name: "Commands",
-                value: "each command starts with the prefix jah(capitilization doesn't matter) /n The basic commands are... /n jah, which makes the bot yeet /n jah yeet, which makes the bot yote /n jah bruh, the bots bruhment /n jah id and jah guild, id of the user, the guild the user is in",
-                inline:true
-              }
+                value: "each command starts with the prefix jah(capitilization doesn't matter)"
+                },
+                {
+                name: "jah",
+                value: "it makes the bot yeet"
+                },
+                {
+                name: "yeet",
+                value: "the bot will yote"
+                },
+                {
+                name: "bruh",
+                value: "the bot will have a bruh moment"
+                },
+                {
+                name: "id",
+                value: "shows id of message author"
+                },
+                {
+                name: "guild",
+                value: "shows the guild of the message author"
+                },
             ],
             timestamp: new Date(),
             footer: {
