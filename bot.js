@@ -9,7 +9,7 @@ client.on('message', message => {
     if (message.author.bot) return;
     messageID = message.author.id;
     
-    let command = message.content.toLowerCase()
+    let command = message.content.toLowerCase();
     if(messageID === '465586014430429206' && command === 'jah'){
             message.reply('JASON DERULO');
     }else if(messageID !== '465586014430429206' && command === 'jah'){
@@ -20,23 +20,23 @@ client.on('message', message => {
             message.reply('jah chicken butt');
     }
 
-    if(command === 'id'){
+    if(command === 'jah id'){
         message.reply(messageID);
     }
-    userGuild = message.author.guild;
-    if(command === 'guild'){
+    let userGuild = message.author.guild;
+    if(command === 'jah guild'){
        message.reply(userGuild);
     }
     
-    if(messageID === '186874605443612672' && command === 'creator'){
+    if(messageID === '186874605443612672' && command === 'jah creator'){
         message.reply('Dad?');
-    }else if(messageID !== '186874605443612672' && command === 'creator'){
+    }else if(messageID !== '186874605443612672' && command === ' jah creator'){
         message.reply('You are not my creator');
     }
     
-    if(messageID === '452904501163196426' && command === 'inspire'){
+    if(messageID === '452904501163196426' && command === 'jah inspire'){
            message.reply('Mom?');
-    }else if(messageID !== '452904501163196426' && command === 'inspire'){
+    }else if(messageID !== '452904501163196426' && command === 'jah inspire'){
            message.reply('You are not my inspiration'); 
     }
     
