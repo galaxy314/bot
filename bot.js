@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const bruh = client.emojis.get("598933091188473867");
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -21,8 +20,8 @@ client.on('message', message => {
     }else if(command === 'jah chicken'){
             message.reply('jah chicken butt');
     }else if(command === 'jah bruh'){
-            let emoji = bruh.toString();
-            message.reply(emoji);
+            const bruh = client.emojis.find(emoji => emoji.name === ":Bruh_moment:");
+            message.reply(`${bruh}`);
     }
 
     if(command === 'jah id'){
