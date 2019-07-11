@@ -20,7 +20,7 @@ client.on('message', message => {
     }else if(command === 'jah chicken'){
             message.reply('jah chicken butt');
     }else if(command === 'jah bruh'){
-            const bruh = client.emojis.find(emoji => emoji.name === ":Bruh_moment:");
+            const bruh = client.emojis.find(emoji => emoji.name === "Bruh_moment");
             message.reply(`${bruh}`);
     }
 
