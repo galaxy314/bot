@@ -54,22 +54,14 @@ client.on('message', message => {
             url: "http://google.com",
             description: "This is a test embed to showcase what they look like and what they can do.",
             fields: [{
-                name: "Fields",
-                value: "They can have different fields with small headlines."
-              },
-              {
-                name: "Masked links",
-                value: "You can put [masked links](http://google.com) inside of rich embeds."
-              },
-              {
-                name: "Markdown",
-                value: "You can put all the *usual* **__Markdown__** inside of them."
+                name: "Commands",
+                value: "each command starts with the prefix jah(capitilization doesn't matter)/nThe basic commands are.../njah, which makes the bot yeet/njah yeet, which makes the bot yote/njah bruh, the bots bruhment/njah id and jah guild, id of the user, the guild the user is in"
               }
             ],
             timestamp: new Date(),
             footer: {
               icon_url: client.user.avatarURL,
-              text: "© Example"
+              text: "© JAH Yeet"
             }
           }
         });
