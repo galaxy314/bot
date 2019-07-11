@@ -7,9 +7,9 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.author.bot) return;
-    messageID = message.author.id;
-    
+    let messageID = message.author.id;
     let command = message.content.toLowerCase();
+    
     if(messageID === '465586014430429206' && command === 'jah'){
             message.reply('JASON DERULO');
     }else if(messageID !== '465586014430429206' && command === 'jah'){
@@ -18,6 +18,8 @@ client.on('message', message => {
             message.reply('JAH YOTE');
     }else if(command === 'jah chicken'){
             message.reply('jah chicken butt');
+    }else if(command === 'jah bruh'){
+            message.reply(':Bruh_moment:');
     }
 
     if(command === 'jah id'){
