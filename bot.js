@@ -7,25 +7,6 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
-exports.run = (client, message, args, tools) => {
-    if(!args[0]) return message.channel.send('Please Input a Calculation.');
-    
-    let resp;
-    try {
-        resp = math.eval(args.join(' '));       
-    }catch(e){
-        return message.channel.send('Sorry, Please input a valid Calculation');   
-    }
-    
-    const embed = new Discord.MessageEmbed()
-        .setColor(0xffffff)
-        .setTitle('Math Calculations')
-        .setField('Input', '/'/'/'js/n${args.join(' ')}/'/'/'')
-        .setField('Input', '/'/'/'js/n${resp}/'/'/'');
-                  
-    message.channel.send(embed);
-}
-
 client.on('message', message => {
     if (message.author.bot) return;
     const messageID = message.author.id;
@@ -103,9 +84,28 @@ client.on('message', message => {
             }
           }
         });
-   }
-    
+   } 
 });
+
+exports.run = (client, message, args, tools) => {
+    if(!args[0]) return message.channel.send('Please Input a Calculation.');
+    
+    let resp;
+    try {
+        resp = math.eval(args.join(' '));       
+    }catch(e){
+        return message.channel.send('Sorry, Please input a valid Calculation');   
+    }
+    
+    const embed = new Discord.MessageEmbed()
+        .setColor(0xffffff)
+        .setTitle('Math Calculations')
+        .setField('Input', '/'/'/'js/n${args.join(' ')}/'/'/'')
+        .setField('Input', '/'/'/'js/n${resp}/'/'/'');
+                  
+    message.channel.send(embed);
+}
+
 
 
 // THIS  MUST  BE  THIS  WAY
