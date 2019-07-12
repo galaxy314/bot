@@ -23,7 +23,7 @@ client.on('message', message => {
     }else if(command === 'jah bruh'){
             const bruh = client.emojis.find(emoji => emoji.name === "Bruh_moment");
             message.reply(`${bruh}`);
-    }else if(){
+    }else if(command === 'jah c'){
         if(!args[0]) return message.channel.send('Please Input a Calculation.');
 
         let resp;
