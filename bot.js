@@ -1,10 +1,30 @@
 const Discord = require('discord.js');
+const math = require('mathjs');
 const client = new Discord.Client();
 
 client.on('ready', () => {
     client.user.setStatus('dnd').then(console.log).catch(console.error);
     console.log('I am ready!');
 });
+
+exports.run = (client, message, args, tools) => {
+    if(!args[0]) return message.channel.send('Please Input a Calculation.');
+    
+    let resp;
+    try {
+        resp = math.eval(args.join(' '));       
+    }catch(e){
+        return message.channel.send('Sorry, Please input a valid Calculation');   
+    }
+    
+    const embed = new Discord.MessageEmbed()
+        .setColor(0xffffff)
+        .setTitle('Math Calculations')
+        .setField('Input', '/'/'/'js/n${args.join(' ')}/'/'/'')
+        .setField('Input', '/'/'/'js/n${resp}/'/'/'');
+                  
+    message.channel.send(embed);
+}
 
 client.on('message', message => {
     if (message.author.bot) return;
