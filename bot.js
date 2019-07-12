@@ -2,11 +2,12 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
+    client.user.setStatus('dnd').then(console.log).catch(console.error);
+    client.user.setPresence({game: {name: 'yeet'}});
     console.log('I am ready!');
 });
 
 client.on('message', message => {
-    client.user.setStatus('dnd').then(console.log).catch(console.error);
     if (message.author.bot) return;
     const messageID = message.author.id;
     const command = message.content.toLowerCase();
