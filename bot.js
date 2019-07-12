@@ -23,25 +23,8 @@ client.on('message', message => {
     }else if(command === 'jah bruh'){
             const bruh = client.emojis.find(emoji => emoji.name === "Bruh_moment");
             message.reply(`${bruh}`);
-    }else if(command === 'jah c'){
-        if(!args[0]) return message.channel.send('Please Input a Calculation.');
-
-        let resp;
-        try {
-            resp = math.eval(args.join(' '));       
-        }catch(e){
-            return message.channel.send('Sorry, Please input a valid Calculation');   
-        }
-
-        const embed = new Discord.MessageEmbed()
-            .setColor(0xffffff)
-            .setTitle('Math Calculations')
-            .setField('Input', '/'/'/'js/n${args.join(' ')}/'/'/'')
-            .setField('Input', '/'/'/'js/n${resp}/'/'/'');
-
-        message.channel.send(embed);         
     }
-
+    
     if(command === 'jah id'){
         message.reply(messageID);
     }
