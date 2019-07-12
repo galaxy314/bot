@@ -10,7 +10,6 @@ client.on('message', message => {
     if (message.author.bot) return;
     const messageID = message.author.id;
     const command = message.content.toLowerCase();
-    const bruh = client.emojis.get("598933091188473867");
     
     if(messageID === '465586014430429206' && command === 'jah'){
             message.reply('JASON DERULO');
