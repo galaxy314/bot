@@ -28,7 +28,7 @@ client.on('message', message => {
           "Hard",
           "Bish idk"
         ];
-       var randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+       var randomAnswer = answers[math.floor(math.random() * answers.length)];
        message.reply(randomAnswer);
     }
     
