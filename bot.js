@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
     console.log('I am ready!');
-    client.user.setStatus('WATCHING EVERYTHING...').then(console.log).catch(console.error);
+    client.user.setGame('WATCHING EVERYTHING...').then(console.log).catch(console.error);
 });
 
 client.on('message', message => {
