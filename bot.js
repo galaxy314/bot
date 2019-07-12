@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const math = require('mathjs');
+const math = require('math.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
