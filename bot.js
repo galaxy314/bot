@@ -5,7 +5,7 @@ let statuses = ['Yeet','Hello World!'];
 client.on('ready', () => {
     setInterval(function(){
         let status = statuses[Math.floor(Math.random()*statuses.length)];
-         client.user.setActivity({activity: {name: status}, status: 'online'});
+         client.user.setActivity(status);
     },1000);
     //client.user.setStatus('dnd').then(console.log).catch(console.error);
     console.log('I am ready!');
