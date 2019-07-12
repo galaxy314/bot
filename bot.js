@@ -23,12 +23,12 @@ client.on('message', message => {
             const bruh = client.emojis.find(emoji => emoji.name === "Bruh_moment");
             message.reply(`${bruh}`);
     }else if(command === 'hard?'){
-        var answers = [
+       const answers = [
           "Soft",
           "Hard",
           "Bish idk"
-        ];
-       var randomAnswer = answers[math.floor(math.random() * answers.length)];
+       ];
+       let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
        message.reply(randomAnswer);
     }
     
