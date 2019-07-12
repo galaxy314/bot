@@ -22,7 +22,7 @@ client.on('message', message => {
     }else if(command === 'jah bruh'){
             const bruh = client.emojis.find(emoji => emoji.name === "Bruh_moment");
             message.reply(`${bruh}`);
-    }else if(command === 'hard?'){
+    }else if(command === 'jah hard?'){
        const answers = [
           "Soft",
           "Hard",
