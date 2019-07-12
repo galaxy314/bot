@@ -22,6 +22,14 @@ client.on('message', message => {
     }else if(command === 'jah bruh'){
             const bruh = client.emojis.find(emoji => emoji.name === "Bruh_moment");
             message.reply(`${bruh}`);
+    }else if(command === 'hard?'){
+        var answers = [
+          "Soft",
+          "Hard",
+          "Bish idk"
+        ];
+       var randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+       message.reply(randomAnswer);
     }
     
     if(command === 'jah id'){
