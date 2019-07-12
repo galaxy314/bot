@@ -1,12 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-let statuses = ['Yeet','Hello World!'];
 
 client.on('ready', () => {
-    setInterval(function(){
-        let status = statuses[Math.floor(Math.random()*statuses.length)];
-         client.user.setActivity(status);
-    },1000);
+    client.user.setActivity('yeet');
     //client.user.setStatus('dnd').then(console.log).catch(console.error);
     console.log('I am ready!');
 });
