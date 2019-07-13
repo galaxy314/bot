@@ -21,7 +21,7 @@ client.on('message', message => {
             message.reply('jah chicken butt');
     }else if(command === 'jah bruh'){
             const bruh = client.emojis.find(emoji => emoji.name === "Bruh_moment");
-            message.send(`${bruh}`);
+            message.channel.send(`${bruh}`);
     }else if(command === 'jah hard?'){
        const answers = [
           "Soft",
