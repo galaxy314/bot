@@ -30,17 +30,6 @@ client.on('message', message => {
        ];
        let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
        message.reply(randomAnswer);
-    }else if (command === 'avatar') {
-	    if (args[0]) {
-		const user = getUserFromMentionRegEx(args[0]);
-		if (!user) {
-			return message.reply('Please use a proper mention if you want to see someone else\'s avatar.');
-		}
-
-		return message.channel.send(`${user.username}'s avatar: ${user.displayAvatarURL}`);
-	}
-
-	return message.channel.send(`${message.author.username}, your avatar: ${message.author.displayAvatarURL}`);
     }
     
     if(command === 'jah id'){
@@ -103,6 +92,16 @@ client.on('message', message => {
           }
         });
    }
+	if (command === 'jah avatar') {
+	    if (args[0]) {
+		const user = getUserFromMentionRegEx(args[0]);
+		if (!user) {
+			return message.reply('Please use a proper mention if you want to see someone else\'s avatar.');
+		}
+		return message.channel.send(`${user.username}'s avatar: ${user.displayAvatarURL}`);
+	}
+	return message.channel.send(`${message.author.username}, your avatar: ${message.author.displayAvatarURL}`);
+    }
     
    function getUserFromMentionRegEx(mention) {
 	const matches = mention.match(/^<@!?(\d+)>$/);
