@@ -30,6 +30,17 @@ client.on('message', message => {
        ];
        let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
        message.reply(randomAnswer);
+    }else if (command === 'avatar') {
+	    if (args[0]) {
+		const user = getUserFromMention(args[0]);
+		if (!user) {
+			return message.reply('Please use a proper mention if you want to see someone else\'s avatar.');
+		}
+
+		return message.channel.send(`${user.username}'s avatar: ${user.displayAvatarURL}`);
+	}
+
+	return message.channel.send(`${message.author.username}, your avatar: ${message.author.displayAvatarURL}`);
     }
     
     if(command === 'jah id'){
@@ -91,7 +102,18 @@ client.on('message', message => {
             }
           }
         });
+   }
+    
+   function getUserFromMention(mention) {
+	const matches = mention.match(/^<@!?(\d+)>$/);
+	// The id is the first and only match found by the RegEx.
+	// However the first element in the matches array will be the entire mention, not just the ID,
+	// so use index 1.
+	const id = matches[1];
+
+	return client.users.get(id);
    } 
+    
 });
 
 
