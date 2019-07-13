@@ -32,7 +32,7 @@ client.on('message', message => {
        message.reply(randomAnswer);
     }else if (command === 'avatar') {
 	    if (args[0]) {
-		const user = getUserFromMention(args[0]);
+		const user = getUserFromMentionRegEx(args[0]);
 		if (!user) {
 			return message.reply('Please use a proper mention if you want to see someone else\'s avatar.');
 		}
@@ -104,7 +104,7 @@ client.on('message', message => {
         });
    }
     
-   function getUserFromMention(mention) {
+   function getUserFromMentionRegEx(mention) {
 	const matches = mention.match(/^<@!?(\d+)>$/);
 	// The id is the first and only match found by the RegEx.
 	// However the first element in the matches array will be the entire mention, not just the ID,
