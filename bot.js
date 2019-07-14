@@ -6,15 +6,19 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
-function getUserFromMentionRegEx(mention) {
-	const matches = mention.match(/^<@!?(\d+)>$/);
-	// The id is the first and only match found by the RegEx.
-	// However the first element in the matches array will be the entire mention, not just the ID,
-	// so use index 1.
-	const id = matches[1];
+function getUserFromMention(mention) {
+	if (!mention) return;
 
-	return client.users.get(id);
-} 
+	if (mention.startsWith('<@') && mention.endsWith('>')) {
+		mention = mention.slice(2, -1);
+
+		if (mention.startsWith('!')) {
+			mention = mention.slice(1);
+		}
+
+		return client.users.get(mention);
+	}
+}
 
 client.on('message', message => {
     if (message.author.bot) return;
@@ -42,7 +46,7 @@ client.on('message', message => {
        message.reply(randomAnswer);
     }else if (command === 'jah avatar') {
 	    if (args[0]) {
-		const user = getUserFromMentionRegEx(args[0]);
+		const user = getUserFromMention(args[0]);
 		if (!user) {
 			return message.reply('Please use a proper mention if you want to see someone else\'s avatar.');
 		}
