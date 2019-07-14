@@ -57,6 +57,16 @@ client.on('message', message => {
     }else if(messageID !== '452904501163196426' && command === 'jah inspire'){
            message.reply('You are not my inspiration'); 
     }
+    
+    mention = message.mention.first();
+    if(command.startsWith("jah send")){
+        if(message == null){return;}
+        message.delete();
+        mentionMessage = message.content.slice(0);
+        mention.sendMessage(mentionMessage);
+        message.channel.send("Done");
+    }
+    
     if(command === 'jah help'){
             message.channel.send({embed: {
             color: 3447003,
