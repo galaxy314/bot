@@ -12,7 +12,7 @@ function getUserFromMention(mention) {
 	if (mention.startsWith('<@') && mention.endsWith('>')) {
 		mention = mention.slice(2, -1);
 
-		if (mention.startsWith('!')) {
+		if (mention.startsWith('jah')) {
 			mention = mention.slice(1);
 		}
 
@@ -44,7 +44,7 @@ client.on('message', message => {
        ];
        let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
        message.reply(randomAnswer);
-    }else if (command === 'jah avatar') {
+    }else if (command === 'avatar') {
 	    if (args[0]) {
 		const user = getUserFromMention(args[0]);
 		if (!user) {
