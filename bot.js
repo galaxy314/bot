@@ -6,19 +6,6 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
-function getUserFromMention(mention) {
-	if (!mention) return;
-
-	if (mention.startsWith('@')) {
-		mention = mention.slice(2, -1);
-		
-		if (mention.startsWith('jah')) {
-			mention = mention.slice(1);
-		}
-		return client.users.get(mention);
-	}
-}
-
 client.on('message', message => {
     if (message.author.bot) return;
     const messageID = message.author.id;
@@ -43,15 +30,6 @@ client.on('message', message => {
        ];
        let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
        message.reply(randomAnswer);
-    }else if (command === 'avatar') {
-	    if (args[0]) {
-		const user = getUserFromMention(args[0]);
-		if (!user) {
-			return message.reply('Please use a proper mention if you want to see someone else\'s avatar.');
-		}
-		return message.channel.send(`${user.username}'s avatar: ${user.displayAvatarURL}`);
-	}
-	return message.channel.send(`${message.author.username}, your avatar: ${message.author.displayAvatarURL}`);
     }
     
     if(command === 'jah id'){
