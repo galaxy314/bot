@@ -62,7 +62,7 @@ client.on('message', message => {
     if(command.startsWith("jah send")){
         if(message == null){return;}
         message.delete();
-        mentionMessage = message.content.slice(0);
+        mentionMessage = message.content.slice(1);
         mention.sendMessage(mentionMessage);
         message.channel.send("Done");
     }
