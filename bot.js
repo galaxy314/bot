@@ -59,10 +59,10 @@ client.on('message', message => {
     }
     
     mention = message.mention.first();
-    if(command.startsWith("jah send")){
+    if(command.startsWith("send")){
         if(message == null){return;}
         message.delete();
-        mentionMessage = message.content.slice(1);
+        let mentionMessage = message.content.slice(0);
         mention.sendMessage(mentionMessage);
         message.channel.send("Done");
     }
