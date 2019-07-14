@@ -16,14 +16,20 @@ client.on('message', message => {
     }else if(messageID !== '465586014430429206' && command === 'jah'){
     	    message.reply('yeet');
     }else if(command === 'jah yeet'){
-            message.reply('JAH YOTE');
+       let answers = [
+          "JAH YOTE",
+          "Skeet",
+          "Yeet Myself off a bridge"
+       ];
+       let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+       message.reply(randomAnswer);
     }else if(command === 'jah chicken'){
             message.reply('jah chicken butt');
     }else if(command === 'jah bruh'){
             const bruh = client.emojis.find(emoji => emoji.name === "Bruh_moment");
             message.channel.send(`${bruh}`);
     }else if(command === 'jah hard?'){
-       const answers = [
+       let answers = [
           "Soft",
           "Hard",
           "Bish idk"
