@@ -9,13 +9,12 @@ client.on('ready', () => {
 function getUserFromMention(mention) {
 	if (!mention) return;
 
-	if (mention.startsWith('<@') && mention.endsWith('>')) {
+	if (mention.startsWith('@')) {
 		mention = mention.slice(2, -1);
-
+		
 		if (mention.startsWith('jah')) {
 			mention = mention.slice(1);
 		}
-
 		return client.users.get(mention);
 	}
 }
