@@ -58,7 +58,7 @@ client.on('message', message => {
            message.reply('You are not my inspiration'); 
     }
     
-    mention = message.mention.first();
+    let mention = message.mention.first();
     if(command.startsWith("send")){
         if(message == null){return;}
         message.delete();
