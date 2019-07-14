@@ -37,7 +37,7 @@ client.on('message', message => {
        ];
        let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
        message.reply(randomAnswer);
-    }else if(command == 'send'){
+    }else if(command === 'send'){
         if(message == null){return;}
         message.delete();
         let mentionMessage = message.content.slice(0);
