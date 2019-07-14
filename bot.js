@@ -10,7 +10,6 @@ client.on('message', message => {
     if (message.author.bot) return;
     const messageID = message.author.id;
     const command = message.content.toLowerCase();
-    const mention = message.mention.first();
     
     if(messageID === '465586014430429206' && command === 'jah'){
             message.reply('JASON DERULO');
@@ -37,12 +36,6 @@ client.on('message', message => {
        ];
        let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
        message.reply(randomAnswer);
-    }else if(command === 'send'){
-        if(message == null){return;}
-        message.delete();
-        let mentionMessage = message.content.slice(0);
-        mention.sendMessage(mentionMessage);
-        message.channel.send('Done');
     }
     
     if(command === 'jah id'){
