@@ -107,6 +107,14 @@ client.on('message', message => {
                 name: "guild",
                 value: "shows the guild of the message author"
                 },
+                {
+                name: "dead",
+                value: "Tells you if you're dead or not"
+                },
+                {
+                name: "chicken",
+                value: "hey guess what? wanna find out type -jah chicken"
+                }
             ],
             timestamp: new Date(),
             footer: {
