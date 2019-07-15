@@ -36,6 +36,15 @@ client.on('message', message => {
        ];
        let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
        message.reply(randomAnswer);
+    }else if(command === 'jah dead'){
+       let answers = [
+          "NO",
+          "IDK",
+          "Most likely not",
+          "Hey, at least you're not a bot forced to reply to commands 24/7" 
+       ];
+       let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+       message.reply(randomAnswer);          
     }
     
     if(command === 'jah id'){
