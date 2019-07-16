@@ -29,7 +29,7 @@ client.on('message', message => {
     }else if(command === 'jah bruh'){
             const bruh = client.emojis.find(emoji => emoji.name === "Bruh_moment");
             message.channel.send(`${bruh}`);
-    }else if(command === 'jah hard?'){
+    }else if(command === 'jah hard'){
         if(message.author.id == '186874605443612672'){
             message.reply('Hard');   
         }else{
@@ -132,6 +132,10 @@ client.on('message', message => {
                 {
                 name: "nudes",
                 value: "Tells you if you or someone should send"
+                },
+                {
+                name: "hard",
+                value: "tells you if you're hard or not"
                 }
             ],
             timestamp: new Date(),
