@@ -30,6 +30,9 @@ client.on('message', message => {
             const bruh = client.emojis.find(emoji => emoji.name === "Bruh_moment");
             message.channel.send(`${bruh}`);
     }else if(command === 'jah hard?'){
+        if(message.author.id == '186874605443612672'){
+            message.reply('Hard');   
+        }
        let answers = [
           "Soft",
           "Hard",
