@@ -123,6 +123,10 @@ client.on('message', message => {
                 {
                 name: "chicken",
                 value: "hey guess what? wanna find out type -jah chicken"
+                },
+                {
+                name: "nudes",
+                value: "Tells you if you or someone should send"
                 }
             ],
             timestamp: new Date(),
