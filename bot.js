@@ -32,14 +32,15 @@ client.on('message', message => {
     }else if(command === 'jah hard?'){
         if(message.author.id == '186874605443612672'){
             message.reply('Hard');   
-        }
-       let answers = [
-          "Soft",
-          "Hard",
-          "Bish idk"
-       ];
-       let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
-       message.reply(randomAnswer);
+        }else{
+           let answers = [
+              "Soft",
+              "Hard",
+              "Bish idk"
+           ];
+           let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+           message.reply(randomAnswer);
+       }
     }else if(command === 'jah dead'){
        let answers = [
           "NO",
