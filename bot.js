@@ -45,6 +45,15 @@ client.on('message', message => {
        ];
        let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
        message.reply(randomAnswer);          
+    }else if(command === 'jah nudes'){
+       let answers = [
+         "Yes, please",
+         "You first",
+         "ew no",
+         "nah"
+       ];
+       let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+       message.reply(randomAnswer);                
     }
     
     if(command === 'jah id'){
