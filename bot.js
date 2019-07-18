@@ -12,21 +12,21 @@ client.on('ready', () => {
 client.on('message', message => {
     if (message.author.bot) return;
     
-    let args = message.content.substring(prefix.length).split(" ");
+    let args = message.content.substring(prefix.length).split(" ").toLowerCase();;
     
     const messageID = message.author.id;
-    const command = message.content.toLowerCase();
+    //const command = message.content.toLowerCase();
     const userGuild = message.author.guild;
     
     switch(args[0]){
-        case command === 'jah':
+        case 'jah':
             if(messageID === '465586014430429206'){
                 message.reply('JASON DERULO');        
             }else if(messageID !== '465586014430429206')
                 message.reply(yeet);
             }
             break;
-        case command === 'yeet':
+        case 'yeet':
             let answers = [
               "JAH YOTE",
               "Skeet",
@@ -35,15 +35,15 @@ client.on('message', message => {
             let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
             message.reply(randomAnswer);
             break;
-        case command === 'chicken':
+        case 'chicken':
             message.reply('jah chicken butt');
             break;
-        case command === 'bruh':
+        case 'bruh':
             message.delete();
             const bruh = client.emojis.find(emoji => emoji.name === "Bruh_moment");
             message.channel.send(`${bruh}`);
             break;
-        case command === 'hard':
+        case 'hard':
             if(message.author.id == '186874605443612672'){
                 message.reply('Hard');   
             }else{
@@ -56,7 +56,7 @@ client.on('message', message => {
                 message.reply(randomAnswer);
             }
             break;
-        case command === 'dead':
+        case 'dead':
             let answers = [
                 "NO",
                 "IDK",
@@ -66,7 +66,7 @@ client.on('message', message => {
             let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
             message.reply(randomAnswer); 
             break;
-        case command === 'nudes':
+        case 'nudes':
             let answers = [
                 "Yes, please",
                 "You first",
@@ -76,25 +76,82 @@ client.on('message', message => {
             let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
             message.reply(randomAnswer);
             break;
-        case command === 'id':
+        case 'id':
             message.reply(messageID);
         break;
-        case command === 'guild':
+        case 'guild':
             message.reply(userGuild);    
         break;
-        case command === 'creator':
+        case 'creator':
             if(messageID === '186874605443612672'){
                 message.reply('Dad?');
             }else if(messageID !== '186874605443612672'){
                 message.reply('You are not my creator');
             }
         break;
-        case command === 'inspire':
+        case 'inspire':
             if(messageID === '452904501163196426'){
                 message.reply('Mom?');
             }else if(messageID !== '452904501163196426'){
                 message.reply('You are not my inspiration');         
             }
+        break;
+        case 'help':
+            message.channel.send({embed: {
+            color: 3447003,
+            author: {
+              name: client.user.username,
+              icon_url: client.user.avatarURL
+            },
+            fields: [
+                {
+                name: "Commands",
+                value: "each command starts with the prefix jah(capitilization doesn't matter)"
+                },
+                {
+                name: "jah",
+                value: "it makes the bot yeet"
+                },
+                {
+                name: "yeet",
+                value: "the bot will yote"
+                },
+                {
+                name: "bruh",
+                value: "the bot will have a bruh moment"
+                },
+                {
+                name: "id",
+                value: "shows id of message author"
+                },
+                {
+                name: "guild",
+                value: "shows the guild of the message author"
+                },
+                {
+                name: "dead",
+                value: "Tells you if you're dead or not"
+                },
+                {
+                name: "chicken",
+                value: "hey guess what? wanna find out type -jah chicken"
+                },
+                {
+                name: "nudes",
+                value: "Tells you if you or someone should send"
+                },
+                {
+                name: "hard",
+                value: "tells you if you're hard or not"
+                }
+            ],
+            timestamp: new Date(),
+            footer: {
+              icon_url: client.user.avatarURL,
+              text: "© JAH Yeet"
+            }
+          }
+        });        
         break;
     }
     
@@ -176,63 +233,63 @@ client.on('message', message => {
 //         message.channel.send("Done");
 //     }
     
-    if(command === 'jah help'){
-            message.channel.send({embed: {
-            color: 3447003,
-            author: {
-              name: client.user.username,
-              icon_url: client.user.avatarURL
-            },
-            fields: [
-                {
-                name: "Commands",
-                value: "each command starts with the prefix jah(capitilization doesn't matter)"
-                },
-                {
-                name: "jah",
-                value: "it makes the bot yeet"
-                },
-                {
-                name: "yeet",
-                value: "the bot will yote"
-                },
-                {
-                name: "bruh",
-                value: "the bot will have a bruh moment"
-                },
-                {
-                name: "id",
-                value: "shows id of message author"
-                },
-                {
-                name: "guild",
-                value: "shows the guild of the message author"
-                },
-                {
-                name: "dead",
-                value: "Tells you if you're dead or not"
-                },
-                {
-                name: "chicken",
-                value: "hey guess what? wanna find out type -jah chicken"
-                },
-                {
-                name: "nudes",
-                value: "Tells you if you or someone should send"
-                },
-                {
-                name: "hard",
-                value: "tells you if you're hard or not"
-                }
-            ],
-            timestamp: new Date(),
-            footer: {
-              icon_url: client.user.avatarURL,
-              text: "© JAH Yeet"
-            }
-          }
-        });
-   }
+//     if(command === 'jah help'){
+//             message.channel.send({embed: {
+//             color: 3447003,
+//             author: {
+//               name: client.user.username,
+//               icon_url: client.user.avatarURL
+//             },
+//             fields: [
+//                 {
+//                 name: "Commands",
+//                 value: "each command starts with the prefix jah(capitilization doesn't matter)"
+//                 },
+//                 {
+//                 name: "jah",
+//                 value: "it makes the bot yeet"
+//                 },
+//                 {
+//                 name: "yeet",
+//                 value: "the bot will yote"
+//                 },
+//                 {
+//                 name: "bruh",
+//                 value: "the bot will have a bruh moment"
+//                 },
+//                 {
+//                 name: "id",
+//                 value: "shows id of message author"
+//                 },
+//                 {
+//                 name: "guild",
+//                 value: "shows the guild of the message author"
+//                 },
+//                 {
+//                 name: "dead",
+//                 value: "Tells you if you're dead or not"
+//                 },
+//                 {
+//                 name: "chicken",
+//                 value: "hey guess what? wanna find out type -jah chicken"
+//                 },
+//                 {
+//                 name: "nudes",
+//                 value: "Tells you if you or someone should send"
+//                 },
+//                 {
+//                 name: "hard",
+//                 value: "tells you if you're hard or not"
+//                 }
+//             ],
+//             timestamp: new Date(),
+//             footer: {
+//               icon_url: client.user.avatarURL,
+//               text: "© JAH Yeet"
+//             }
+//           }
+//         });
+//    }
 });
 
 
