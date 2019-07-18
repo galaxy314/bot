@@ -18,7 +18,7 @@ client.on('message', message => {
     //const command = message.content.toLowerCase();
     const userGuild = message.author.guild;
     
-    switch(args[0]){
+    switch(args[1]){
         case 'jah':
             if(messageID === '465586014430429206'){
                 message.reply('JASON DERULO');        
