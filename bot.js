@@ -8,7 +8,7 @@ client.on('ready', () => {
 });
 
 client.on('guildMemberAdd', member => {
-    const channel = member.guild.channels.find(channel => channel.name === "welcome-my-children");
+    const channel = member.guild.channels.find(channel => channel.id === '581782568983199746');
     
     if(!channel) return;
     
