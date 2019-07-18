@@ -16,7 +16,7 @@ client.on('message', message => {
     if(messageID === '465586014430429206' && command === 'jah'){
             message.reply('JASON DERULO');
     }else if(messageID !== '465586014430429206' && command === 'jah'){
-    	    message.channel.send('yeet').then(message.react(':regional_indicator_y: '));
+    	    message.channel.send('yeet').then(message.react(:regional_indicator_y:));
     }else if(command === 'jah yeet'){
        let answers = [
           "JAH YOTE",
