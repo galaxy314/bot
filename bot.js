@@ -34,7 +34,7 @@ client.on('message', message => {
        let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
        message.reply(randomAnswer);
     }else if(command === 'jah chicken'){
-            message.reply('chicken butt ' + ' gotcha ' + message.author.toString());
+            message.channel.send('chicken butt ' + ' gotcha ' + message.author.toString());
     }else if(command === 'jah bruh'){
             message.delete();
             const bruh = client.emojis.find(emoji => emoji.name === "Bruh_moment");
