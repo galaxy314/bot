@@ -12,7 +12,7 @@ client.on('guildMemberAdd', member => {
     
     if(!channel) return;
     
-    channel.send('welcome ${member}, please introduce yourself at #👋introductions and set roles in #📝roles');
+    channel.send('welcome ' + '${member}' + ' please introduce yourself at #👋introductions and set roles in #📝roles');
 });
 
 client.on('message', message => {
