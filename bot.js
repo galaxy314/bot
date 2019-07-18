@@ -23,7 +23,7 @@ client.on('message', message => {
             if(messageID === '465586014430429206'){
                 message.reply('JASON DERULO');        
             }else if(messageID !== '465586014430429206')
-                message.reply(yeet);
+                message.reply('yeet');
             }
             break;
         case 'yeet':
