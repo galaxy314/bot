@@ -60,11 +60,7 @@ client.on('message', message => {
          "nah"
        ];
        let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
-       if(randomAnswer === answers[0]){
-           message.reply(randomAnswer).then(message.react(:ok_hand:));   
-       }else{
-           message.reply(randomAnswer);
-       }
+       message.reply(randomAnswer);
     }
     
     if(command === 'jah id'){
