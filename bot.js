@@ -60,9 +60,10 @@ client.on('message', message => {
          "nah"
        ];
        let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
-       message.reply(randomAnswer);
        if(randomAnswer === answers[0]){
-            message.react(':ok_hand:')   
+           message.reply(randomAnswer).then(message.react(:ok_hand:));   
+       }else{
+           message.reply(randomAnswer);
        }
     }
     
