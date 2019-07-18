@@ -12,13 +12,13 @@ client.on('ready', () => {
 client.on('message', message => {
     if (message.author.bot) return;
     
-    let args = message.content.substring(prefix.length).split(" ").toLowerCase();;
+    let args = message.content.substring(prefix.length).split(" ").toLowerCase();
     
     const messageID = message.author.id;
     //const command = message.content.toLowerCase();
     const userGuild = message.author.guild;
     
-    switch(args[1]){
+    switch(args[0]){
         case 'jah':
             if(messageID === '465586014430429206'){
                 message.reply('JASON DERULO');        
