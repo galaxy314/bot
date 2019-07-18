@@ -1,8 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-//const prefix = 'jah';
-
 client.on('ready', () => {
     client.user.setPresence({ game: { name: 'jah help', type: 2}, status: 'dnd'}).then(console.log).catch(console.error);
     //client.user.setStatus('dnd').then(console.log).catch(console.error);
@@ -12,10 +10,8 @@ client.on('ready', () => {
 client.on('message', message => {
     if (message.author.bot) return;
     
-    //let args = message.content.substring(prefix.length).split(" ");
     const messageID = message.author.id;
     const command = message.content.toLowerCase();
-    const userGuild = message.author.guild;
     
     if(messageID === '465586014430429206' && command === 'jah'){
             message.reply('JASON DERULO');
