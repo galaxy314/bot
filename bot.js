@@ -60,7 +60,10 @@ client.on('message', message => {
          "nah"
        ];
        let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
-       message.reply(randomAnswer);                
+       message.reply(randomAnswer);
+       if(randomAnswer === 'Yes, please'){
+            message.react(':ok_hand:')   
+       }
     }
     
     if(command === 'jah id'){
