@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+const prefix = 'jah';
+
 client.on('ready', () => {
     client.user.setPresence({ game: { name: 'jah help', type: 2}, status: 'dnd'}).then(console.log).catch(console.error);
     //client.user.setStatus('dnd').then(console.log).catch(console.error);
@@ -9,86 +11,170 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.author.bot) return;
+    
+    let args = message.content.substring(prefix.length).split(" ");
+    
     const messageID = message.author.id;
     const command = message.content.toLowerCase();
+    const userGuild = message.author.guild;
     
-    if(messageID === '465586014430429206' && command === 'jah'){
-            message.reply('JASON DERULO');
-    }else if(messageID !== '465586014430429206' && command === 'jah'){
-    	    message.reply('yeet');
-    }else if(command === 'jah yeet'){
-       let answers = [
-          "JAH YOTE",
-          "Skeet",
-          "Yeet Myself off a bridge"
-       ];
-       let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
-       message.reply(randomAnswer);
-    }else if(command === 'jah chicken'){
+    switch(args[0]){
+        case command === 'jah':
+            if(messageID === '465586014430429206'){
+                message.reply('JASON DERULO');        
+            }else if(messageID !== '465586014430429206')
+                message.reply(yeet);
+            }
+            break;
+        case command === 'yeet':
+            let answers = [
+              "JAH YOTE",
+              "Skeet",
+              "Yeet Myself off a bridge"
+            ];
+            let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+            message.reply(randomAnswer);
+            break;
+        case command === 'chicken':
             message.reply('jah chicken butt');
-    }else if(command === 'jah bruh'){
+            break;
+        case command === 'bruh':
             message.delete();
             const bruh = client.emojis.find(emoji => emoji.name === "Bruh_moment");
             message.channel.send(`${bruh}`);
-    }else if(command === 'jah hard'){
-        if(message.author.id == '186874605443612672'){
-            message.reply('Hard');   
-        }else{
-           let answers = [
-              "Soft",
-              "Hard",
-              "Bish idk"
-           ];
-           let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
-           message.reply(randomAnswer);
-       }
-    }else if(command === 'jah dead'){
-       let answers = [
-          "NO",
-          "IDK",
-          "Most likely not",
-          "Hey, at least you're not a bot forced to reply to commands 24/7" 
-       ];
-       let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
-       message.reply(randomAnswer);          
-    }else if(command === 'jah nudes'){
-       let answers = [
-         "Yes, please",
-         "You first",
-         "ew no",
-         "nah"
-       ];
-       let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
-       message.reply(randomAnswer);                
+            break;
+        case command === 'hard':
+            if(message.author.id == '186874605443612672'){
+                message.reply('Hard');   
+            }else{
+                let answers = [
+                    "Soft",
+                    "Hard",
+                    "Bish idk"
+                ];
+                let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+                message.reply(randomAnswer);
+            }
+            break;
+        case command === 'dead':
+            let answers = [
+                "NO",
+                "IDK",
+                "Most likely not",
+                "Hey, at least you're not a bot forced to reply to commands 24/7" 
+            ];
+            let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+            message.reply(randomAnswer); 
+            break;
+        case command === 'nudes':
+            let answers = [
+                "Yes, please",
+                "You first",
+                "ew no",
+                "nah"
+            ];
+            let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+            message.reply(randomAnswer);
+            break;
+        case command === 'id':
+            message.reply(messageID);
+        break;
+        case command === 'guild':
+            message.reply(userGuild);    
+        break;
+        case command === 'creator':
+            if(messageID === '186874605443612672'){
+                message.reply('Dad?');
+            }else if(messageID !== '186874605443612672'){
+                message.reply('You are not my creator');
+            }
+        break;
+        case command === 'inspire':
+            if(messageID === '452904501163196426'){
+                message.reply('Mom?');
+            }else if(messageID !== '452904501163196426'){
+                message.reply('You are not my inspiration');         
+            }
+        break;
     }
     
-    if(command === 'jah id'){
-        message.reply(messageID);
-    }
-    let userGuild = message.author.guild;
-    if(command === 'jah guild'){
-       message.reply(userGuild);
-    }
+//     if(messageID === '465586014430429206' && command === 'jah'){
+//             message.reply('JASON DERULO');
+//     }else if(messageID !== '465586014430429206' && command === 'jah'){
+//     	    message.reply('yeet');
+//     }else if(command === 'jah yeet'){
+//        let answers = [
+//           "JAH YOTE",
+//           "Skeet",
+//           "Yeet Myself off a bridge"
+//        ];
+//        let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+//        message.reply(randomAnswer);
+//     }else if(command === 'jah chicken'){
+//             message.reply('jah chicken butt');
+//     }else if(command === 'jah bruh'){
+//             message.delete();
+//             const bruh = client.emojis.find(emoji => emoji.name === "Bruh_moment");
+//             message.channel.send(`${bruh}`);
+//     }else if(command === 'jah hard'){
+//         if(message.author.id == '186874605443612672'){
+//             message.reply('Hard');   
+//         }else{
+//            let answers = [
+//               "Soft",
+//               "Hard",
+//               "Bish idk"
+//            ];
+//            let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+//            message.reply(randomAnswer);
+//        }
+//     }else if(command === 'jah dead'){
+//        let answers = [
+//           "NO",
+//           "IDK",
+//           "Most likely not",
+//           "Hey, at least you're not a bot forced to reply to commands 24/7" 
+//        ];
+//        let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+//        message.reply(randomAnswer);          
+//     }else if(command === 'jah nudes'){
+//        let answers = [
+//          "Yes, please",
+//          "You first",
+//          "ew no",
+//          "nah"
+//        ];
+//        let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+//        message.reply(randomAnswer);                
+//     }
     
-    if(messageID === '186874605443612672' && command === 'jah creator'){
-        message.reply('Dad?');
-    }else if(messageID !== '186874605443612672' && command === ' jah creator'){
-        message.reply('You are not my creator');
-    }
+//     if(command === 'jah id'){
+//         message.reply(messageID);
+//     }
+//     let userGuild = message.author.guild;
+//     if(command === 'jah guild'){
+//        message.reply(userGuild);
+//     }
     
-    if(messageID === '452904501163196426' && command === 'jah inspire'){
-           message.reply('Mom?');
-    }else if(messageID !== '452904501163196426' && command === 'jah inspire'){
-           message.reply('You are not my inspiration'); 
-    }
+//     if(messageID === '186874605443612672' && command === 'jah creator'){
+//         message.reply('Dad?');
+//     }else if(messageID !== '186874605443612672' && command === ' jah creator'){
+//         message.reply('You are not my creator');
+//     }
     
-    if(command.startsWith("send")){
-        if(message == null){return;}
-        message.delete();
-        let mentionMessage = message.content.slice(0);
-        mention.sendMessage(mentionMessage);
-        message.channel.send("Done");
-    }
+//     if(messageID === '452904501163196426' && command === 'jah inspire'){
+//            message.reply('Mom?');
+//     }else if(messageID !== '452904501163196426' && command === 'jah inspire'){
+//            message.reply('You are not my inspiration'); 
+//     }
+    
+//     if(command.startsWith("send")){
+//         if(message == null){return;}
+//         message.delete();
+//         let mentionMessage = message.content.slice(0);
+//         mention.sendMessage(mentionMessage);
+//         message.channel.send("Done");
+//     }
     
     if(command === 'jah help'){
             message.channel.send({embed: {
