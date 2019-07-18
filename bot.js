@@ -83,14 +83,6 @@ client.on('message', message => {
            message.reply('You are not my inspiration'); 
     }
     
-    if(command.startsWith("send")){
-        if(message == null){return;}
-        message.delete();
-        let mentionMessage = message.content.slice(0);
-        mention.sendMessage(mentionMessage);
-        message.channel.send("Done");
-    }
-    
     if(command === 'jah help'){
             message.channel.send({embed: {
             color: 3447003,
