@@ -61,7 +61,7 @@ client.on('message', message => {
        ];
        let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
        message.reply(randomAnswer);
-       if(randomAnswer === 'Yes, please'){
+       if(randomAnswer === answers[0]){
             message.react(':ok_hand:')   
        }
     }
