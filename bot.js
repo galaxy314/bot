@@ -12,7 +12,7 @@ client.on('ready', () => {
 client.on('message', message => {
     if (message.author.bot) return;
     
-    let args = message.content.substring(prefix.length).split(" ").toLowerCase();
+    let args = message.content.substring(prefix.length).split(" ");
     
     const messageID = message.author.id;
     //const command = message.content.toLowerCase();
