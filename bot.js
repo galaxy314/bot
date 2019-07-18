@@ -49,7 +49,7 @@ client.on('message', message => {
               "Bish idk"
            ];
            let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
-           message.reply(randomAnswer);
+           message.channel.send(message.author + ' is ' + randomAnswer);
        }
     }else if(command === 'jah dead'){
        let answers = [
