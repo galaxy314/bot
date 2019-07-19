@@ -12,7 +12,15 @@ client.on('guildMemberAdd', member => {
     
     if(!channel) return;
     
-    channel.send('welcome, ${member}, please introduce yourself at #👋introductions and set roles in #📝roles');
+    channel.send(`welcome, ${member}, please introduce yourself at #👋introductions and set roles in #📝roles`);
+});
+
+client.on('guildMemberRemove', member =>{
+    const channel = member.guild.channels.find(channel => channel.id === '581782568983199746');
+    
+    if(!channel) return;
+    
+    channel.send(`later ,${member}, what a loser`);
 });
 
 client.on('message', message => {
