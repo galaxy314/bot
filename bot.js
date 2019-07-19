@@ -7,12 +7,12 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
-client.on("guildMemberAdd", member => {
+client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.find(channel => channel.id === '581782568983199746');
     
     if(!channel) return;
     
-    channel.send('welcome ${member.user} please introduce yourself at #👋introductions and set roles in #📝roles');
+    channel.send('welcome, ${member}, please introduce yourself at #👋introductions and set roles in #📝roles');
 });
 
 client.on('message', message => {
