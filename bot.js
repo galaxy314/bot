@@ -167,8 +167,7 @@ client.on('message', message => {
                 },
                 {
                 name: "is",
-                value: "jah will answer a yes or no question",
-                value: "you must mention a user on the server after the is for the command to work"
+                value: "jah will answer a yes or no question, you must mention a user on the server after the is for the command to work"
                 }
             ],
             timestamp: new Date(),
