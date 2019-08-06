@@ -92,6 +92,8 @@ client.on('message', message => {
             ];
             let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
             message.reply(randomAnswer);
+        }else if(!user){
+            message.reply('you must mention someone after the is');   
         }
     }
     
@@ -162,6 +164,11 @@ client.on('message', message => {
                 {
                 name: "hard",
                 value: "tells you if you're hard or not"
+                },
+                {
+                name: "is",
+                value: "jah will answer a yes or no question",
+                value: "you must mention a user on the server after the is for the command to work"
                 }
             ],
             timestamp: new Date(),
