@@ -12,7 +12,7 @@ client.on('guildMemberAdd', member => {
     
     if(!channel) return;
     
-    channel.send(`welcome, ${member.tag}, please introduce yourself at #👋introductions and set roles in #📝roles`);
+    channel.send(`welcome, ${member}, please introduce yourself at #👋introductions and set roles in #📝roles`);
 });
 
 client.on('guildMemberRemove', member =>{
@@ -20,7 +20,7 @@ client.on('guildMemberRemove', member =>{
     
     if(!channel) return;
     
-    channel.send(`later ,${member.tag}, what a loser`);
+    channel.send(`later ,${member}, what a loser`);
 });
 
 client.on('message', message => {
