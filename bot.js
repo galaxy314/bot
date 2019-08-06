@@ -27,6 +27,7 @@ client.on('message', message => {
     if (message.author.bot) return;
     
     const messageID = message.author.id;
+    const user = message.mentions.users.first();
     const command = message.content.toLowerCase();
     
     if(messageID === '465586014430429206' && command === 'jah'){
@@ -77,6 +78,21 @@ client.on('message', message => {
        ];
        let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
        message.reply(randomAnswer);
+    }
+    
+    if(message.content.startsWith('jah is')){
+        if(user){
+            let answers = [
+             "yes",
+             "no",
+             "perhaps",
+             "unclear",
+             "possibly",
+             "above my paygrade"
+            ];
+            let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+            message.reply(randomAnswer);
+        }
     }
     
     if(command === 'jah id'){
