@@ -28,6 +28,7 @@ client.on('message', message => {
     
     const messageID = message.author.id;
     const user = message.mentions.users.first();
+    const role = message.mentions.roles.first();
     const command = message.content.toLowerCase();
     
     if(messageID === '465586014430429206' && command === 'jah'){
@@ -81,7 +82,7 @@ client.on('message', message => {
     }
     
     if(message.content.startsWith('jah is')){
-        if(user){
+        if(user || role){
             let answers = [
              "yes",
              "no",
@@ -92,7 +93,7 @@ client.on('message', message => {
             ];
             let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
             message.reply(randomAnswer);
-        }else if(!user){
+        }else if(!user || !role){
             message.reply('you must mention someone after the is');   
         }
     }
