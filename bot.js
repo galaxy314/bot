@@ -28,6 +28,7 @@ client.on('message', message => {
     
     const messageID = message.author.id;
     const user = message.mentions.users.first();
+    const userMentionId = message.mention.users.id;
     const role = message.mentions.roles.first();
     const command = message.content.toLowerCase();
     
@@ -100,7 +101,7 @@ client.on('message', message => {
     
     if(message.content.startsWith('jah send')){
        if(user){
-        message.mention.send("hey");   
+        userMentionId.send("hey");   
        }else if(!user){
             message.reply('You must mention someone after the send')   
        }
