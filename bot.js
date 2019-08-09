@@ -99,13 +99,19 @@ client.on('message', message => {
         }
     }
     
-    if(message.content.startsWith('jah send')){
-       if(user){
-            userMentionId.send("hey");   
-       }else if(!user){
-            message.reply('You must mention someone after the send')   
-       }
+    if(message.content.startsWith('jah userid')){
+     if(user){
+        message.reply(userMentionId);   
+     }
     }
+    
+//     if(message.content.startsWith('jah send')){
+//        if(user){
+//             userMentionId.send("hey");   
+//        }else if(!user){
+//             message.reply('You must mention someone after the send')   
+//        }
+//     }
     
     if(command === 'jah id'){
         message.reply(messageID);
