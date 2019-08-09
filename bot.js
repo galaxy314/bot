@@ -101,6 +101,8 @@ client.on('message', message => {
     if(message.content.startsWith('jah send')){
        if(user){
         message.mention.send("hey");   
+       }else if(!user){
+            message.reply('You must mention someone after the send')   
        }
     }
     
