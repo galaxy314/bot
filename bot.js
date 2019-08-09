@@ -101,7 +101,8 @@ client.on('message', message => {
     
     if(message.content.startsWith('jah userid')){
      if(user){
-        message.reply(message.mentions.users.first().id);   
+        let id = message.mentions.users.first().id;
+        message.reply(id);   
      }
     }
     
