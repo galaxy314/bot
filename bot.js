@@ -101,17 +101,17 @@ client.on('message', message => {
     
     if(message.content.startsWith('jah userid')){
      if(user){
-        message.reply(userMentionId);   
+        message.reply(message.mentions.users.first().id);   
      }
     }
     
-    if(message.content.startsWith('jah send')){
-       if(user){
-            message.users.get(userMentionId).send("someMessage");   
-       }else if(!user){
-            message.reply('You must mention someone after the send')   
-       }
-    }
+//     if(message.content.startsWith('jah send')){
+//        if(user){
+//             message.users.get(userMentionId).send("someMessage");   
+//        }else if(!user){
+//             message.reply('You must mention someone after the send')   
+//        }
+//     }
     
     if(command === 'jah id'){
         message.reply(messageID);
