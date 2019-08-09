@@ -98,6 +98,12 @@ client.on('message', message => {
         }
     }
     
+    if(message.content.startsWith('jah send')){
+       if(user){
+        message.mention.send("hey");   
+       }
+    }
+    
     if(command === 'jah id'){
         message.reply(messageID);
     }
