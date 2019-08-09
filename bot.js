@@ -118,6 +118,10 @@ client.on('message', message => {
     
     if(command === 'jah id'){
         message.reply(messageID);
+        if(user){
+            let id = message.mentions.users.first().id;
+            message.reply(id);   
+        }
     }
     let userGuild = message.author.guild;
     if(command === 'jah guild'){
