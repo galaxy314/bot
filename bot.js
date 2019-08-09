@@ -27,8 +27,8 @@ client.on('message', message => {
     if (message.author.bot) return;
     
     const messageID = message.author.id;
-    const user = message.mentions.users.first();
-    const userMentionId = message.mentions.users.id;
+    const user = message.mentions.members.first();
+    const userMentionId = message.mentions.members.id;
     const role = message.mentions.roles.first();
     const command = message.content.toLowerCase();
     
