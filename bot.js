@@ -28,7 +28,7 @@ client.on('message', message => {
     
     const messageID = message.author.id;
     const user = message.mentions.users.first();
-    const userMentionId = message.mention.users.id;
+    const userMentionId = message.mentions.users.id;
     const role = message.mentions.roles.first();
     const command = message.content.toLowerCase();
     
