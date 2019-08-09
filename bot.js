@@ -106,13 +106,14 @@ client.on('message', message => {
      }
     }
     
-//     if(message.content.startsWith('jah send')){
-//        if(user){
-//             message.users.get(userMentionId).send("someMessage");   
-//        }else if(!user){
-//             message.reply('You must mention someone after the send')   
-//        }
-//     }
+    if(message.content.startsWith('jah send')){
+       if(user){
+            let id = message.mentions.users.first().id;
+            id.send("hey"); 
+       }else if(!user){
+            message.reply('You must mention someone after the send')   
+       }
+    }
     
     if(command === 'jah id'){
         message.reply(messageID);
