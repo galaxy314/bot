@@ -107,6 +107,7 @@ client.on('message', message => {
     
     if(message.content.startsWith('jah send')){
        if(user){
+            message.delete();
             let id = message.mentions.users.first().id;
             let msg = message.content.substr(id.length + 12);
             client.users.get(id).send(msg);
