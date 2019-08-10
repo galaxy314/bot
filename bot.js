@@ -106,11 +106,11 @@ client.on('message', message => {
     }
     let prefix = 'jah reverse'
     if(message.content.startsWith(prefix)){
-        let text = message.content.substr(prefix.length);
+        let text = message.content.substr(12);
         let reversed = '';
         let i = text.length;
         while(i >0){
-         reversed += text.text.substr(i -1, i);
+         reversed += text.text.substr(i - 1, i);
          i--;
         }
         message.reply(reversed);
