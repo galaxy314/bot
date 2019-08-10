@@ -122,16 +122,6 @@ client.on('message', message => {
             message.reply('You must mention someone after the send')   
        }
     }
-    let prefix = 'jah txt2bin';
-    if(message.content.startsWith(prefix)){
-        let msg = message.content.substr(12);
-        let result = "";
-	for (let i = 0; i < msg.length; i++) {
-		let bin = msg[i].charCodeAt().toString(2);
-		result += Array(8 - bin.length + 1).join("0") + bin;
-	} 
-        message.reply(result);
-    }
     
     let userGuild = message.author.guild;
     if(command === 'jah guild'){
