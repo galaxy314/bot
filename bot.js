@@ -109,7 +109,7 @@ client.on('message', message => {
     if(message.content.startsWith(prefix)){
         let text = message.content.substr(12);
         
-        text.split("").reverse().join("");
+        let text = text.split("").reverse().join("");
         message.reply(text);
     }
     
