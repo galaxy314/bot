@@ -104,6 +104,17 @@ client.on('message', message => {
         message.reply(id);   
      }
     }
+    let prefix = 'jah reverse'
+    if(message.content.startsWith(prefix)){
+        let text = message.content.substr(prefix.length);
+        let reversed = '';
+        let i = text.length;
+        while(i >0){
+         reversed += text.text.substr(i -1, i);
+         i--;
+        }
+        message.reply(reversed);
+    }
     
     if(message.content.startsWith('jah send')){
        if(user){
@@ -116,13 +127,6 @@ client.on('message', message => {
        }
     }
     
-    if(command === 'jah id'){
-        message.reply(messageID);
-        if(user){
-            let id = message.mentions.users.first().id;
-            message.reply(id);   
-        }
-    }
     let userGuild = message.author.guild;
     if(command === 'jah guild'){
        message.reply(userGuild);
@@ -165,8 +169,8 @@ client.on('message', message => {
                 value: "the bot will have a bruh moment"
                 },
                 {
-                name: "id",
-                value: "shows id of message author"
+                name: "userid",
+                value: "shows id of the mentioned user"
                 },
                 {
                 name: "guild",
@@ -178,7 +182,7 @@ client.on('message', message => {
                 },
                 {
                 name: "chicken",
-                value: "hey guess what? wanna find out type -jah chicken"
+                value: "hey guess what? wanna find out type- jah chicken"
                 },
                 {
                 name: "nudes",
