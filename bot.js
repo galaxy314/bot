@@ -104,16 +104,13 @@ client.on('message', message => {
         message.reply(id);   
      }
     }
+    
     let prefix = 'jah reverse'
     if(message.content.startsWith(prefix)){
         let text = message.content.substr(12);
-        let reversed = '';
-        let i = text.length;
-        while(i >0){
-         reversed += text.text.substr(i - 1, i);
-         i--;
-        }
-        message.reply(reversed);
+        
+        text.split("").reverse().join("");
+        message.reply(text);
     }
     
     if(message.content.startsWith('jah send')){
