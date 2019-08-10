@@ -125,6 +125,7 @@ client.on('message', message => {
     
     if(message.content.startsWith('jah txt2b64')){
         let text = message.content.substr(12);
+        message.delete();
         'use strict';
         let data = text;
         let buff = new Buffer(data);
