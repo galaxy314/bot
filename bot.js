@@ -108,7 +108,7 @@ client.on('message', message => {
     let prefix = 'jah reverse'
     if(message.content.startsWith(prefix)){
         let text = message.content.substr(12);
-        
+        message.delete();
         message.reply(text.split("").reverse().join(""));
     }
     
