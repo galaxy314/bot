@@ -105,7 +105,7 @@ client.on('message', message => {
      }
     }
     
-    let prefix = 'jah reverse'
+    let prefix = 'jah reverse';
     if(message.content.startsWith(prefix)){
         let text = message.content.substr(12);
         message.delete();
@@ -121,6 +121,15 @@ client.on('message', message => {
        }else if(!user){
             message.reply('You must mention someone after the send')   
        }
+    }
+    let prefix = 'jah txt2bin';
+    if(message.content.startsWith(prefix)){
+        let msg = message.content.substr(12);
+        let binaryOutput = '';
+        for (var i = 0; i < msg.length; i++) {
+           binaryOutput += msg[i].charCodeAt(0).toString(2) + ' ';
+        }
+        message.reply(binaryOutput);
     }
     
     let userGuild = message.author.guild;
