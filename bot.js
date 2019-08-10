@@ -208,6 +208,10 @@ client.on('message', message => {
                 {
                 name: "send",
                 value: "sends an annonymous dm to the mentioned person <jah send @User (text here)>"
+                },
+                {
+                name: "txt2b64",
+                value: "converts text to base64 (prolly numbers too) <jah txt2b64 (text here)>"    
                 }
             ],
             timestamp: new Date(),
