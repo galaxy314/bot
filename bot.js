@@ -125,7 +125,11 @@ client.on('message', message => {
     let prefix = 'jah txt2bin';
     if(message.content.startsWith(prefix)){
         let msg = message.content.substr(12);
-        let result = toBinary(msg);
+        let result = "";
+	for (let i = 0; i < msg.length; i++) {
+		let bin = msg[i].charCodeAt().toString(2);
+		result += Array(8 - bin.length + 1).join("0") + bin;
+	} 
         message.reply(result);
     }
     
@@ -216,15 +220,6 @@ client.on('message', message => {
         });
    }
 });
-
-function toBinary(input) {
-		var result = "";
-		for (var i = 0; i < input.length; i++) {
-			var bin = input[i].charCodeAt().toString(2);
-			result += Array(8 - bin.length + 1).join("0") + bin;
-		} 
-		return result;
-}
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);//where BOT_TOKEN is the token of our bot 
