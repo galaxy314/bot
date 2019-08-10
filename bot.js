@@ -150,7 +150,7 @@ client.on('message', message => {
             fields: [
                 {
                 name: "Commands",
-                value: "each command starts with the prefix jah(capitilization doesn't matter) examples in between <>"
+                value: "each command starts with the prefix jah(all lower case) examples in between <>"
                 },
                 {
                 name: "jah",
