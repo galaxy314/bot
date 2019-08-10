@@ -150,47 +150,51 @@ client.on('message', message => {
             fields: [
                 {
                 name: "Commands",
-                value: "each command starts with the prefix jah(capitilization doesn't matter)"
+                value: "each command starts with the prefix jah(capitilization doesn't matter) examples in between <>"
                 },
                 {
                 name: "jah",
-                value: "it makes the bot yeet"
+                value: "it makes the bot yeet <jah>"
                 },
                 {
                 name: "yeet",
-                value: "the bot will yote"
+                value: "the bot will yote and other stuff <jah yeet>"
                 },
                 {
                 name: "bruh",
-                value: "the bot will have a bruh moment"
+                value: "the bot will have a bruh moment <jah bruh>"
                 },
                 {
                 name: "userid",
-                value: "shows id of the mentioned user"
+                value: "shows id of the mentioned user <jah userid @user>"
                 },
                 {
                 name: "guild",
-                value: "shows the guild of the message author"
+                value: "shows the guild of the message author <jah guild>"
                 },
                 {
                 name: "dead",
-                value: "Tells you if you're dead or not"
+                value: "Tells you if you're dead or not <jah dead>"
                 },
                 {
                 name: "chicken",
-                value: "hey guess what? wanna find out type- jah chicken"
+                value: "hey guess what? wanna find out type <jah chicken>"
                 },
                 {
                 name: "nudes",
-                value: "Tells you if you or someone should send"
+                value: "Tells you if you or someone should send <jah nudes>"
                 },
                 {
                 name: "hard",
-                value: "tells you if you're hard or not"
+                value: "tells you if you're hard or not <jah hard>"
                 },
                 {
                 name: "is",
-                value: "jah will answer a yes or no question, you must mention a user on the server after the is for the command to work"
+                value: "jah will answer a yes or no question, you must mention a user on the server after the is for the command to work <jah is (question)>"
+                },
+                {
+                name: "reverse",
+                value: "reverses the text after reverse <jah reverse (text here)>"
                 }
             ],
             timestamp: new Date(),
