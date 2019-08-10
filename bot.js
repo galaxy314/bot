@@ -109,8 +109,7 @@ client.on('message', message => {
     if(message.content.startsWith(prefix)){
         let text = message.content.substr(12);
         
-        let text = text.split("").reverse().join("");
-        message.reply(text);
+        message.reply(text.split("").reverse().join(""));
     }
     
     if(message.content.startsWith('jah send')){
