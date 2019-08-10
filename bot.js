@@ -195,6 +195,10 @@ client.on('message', message => {
                 {
                 name: "reverse",
                 value: "reverses the text after reverse <jah reverse (text here)>"
+                },
+                {
+                name: "send",
+                value: "sends an annonymous dm to the mentioned person <jah send @User (text here)>"
                 }
             ],
             timestamp: new Date(),
