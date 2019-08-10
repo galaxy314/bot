@@ -123,6 +123,15 @@ client.on('message', message => {
        }
     }
     
+    if(message.content.startsWith('jah txt2b64')){
+        let text = message.content.substr(12);
+        'use strict';
+        let data = text;
+        let buff = new Buffer(data);
+        let base64data = buff.toString('base64');
+        message.reply(base64data);
+    }
+    
     let userGuild = message.author.guild;
     if(command === 'jah guild'){
        message.reply(userGuild);
