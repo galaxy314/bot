@@ -159,7 +159,7 @@ client.on('message', message => {
             return String.fromCharCode(65+(a.charCodeAt(0)-65+shift)%26);
             });
         }
-        message.reply(caesar(text,13));
+        message.reply(caesar(text,shift));
     }
     
     let userGuild = message.author.guild;
