@@ -145,7 +145,7 @@ client.on('message', message => {
         message.delete();
         'use strict';
         let data = txt;
-        let buff = new Buffer(data);
+        let buff = new Buffer(data, 'base64');
         let text = buff.toString('ascii');
         message.reply(text);
     }
