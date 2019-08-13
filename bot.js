@@ -141,9 +141,10 @@ client.on('message', message => {
     }
     
     if(message.content.startsWith('jah b642txt')){
+        let txt = message.content.subtr(12).toString();
         message.delete();
         'use strict';
-        let data = message.content.subtr(12).toString();
+        let data = txt;
         let buff = new Buffer(data, 'base64');
         let text = buff.toString('ascii');
         message.reply(text);
