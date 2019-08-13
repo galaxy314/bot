@@ -140,6 +140,16 @@ client.on('message', message => {
         message.reply(base64data);
     }
     
+    if(message.content.startsWith('jah txt2hex')){
+        let text = message.content.substr(12);
+        message.delete();
+        'use strict';
+        let data = text;
+        let buff = new Buffer(data);
+        let hexdata = buff.toString('hex');
+        message.reply(hexdata);
+    }
+    
     let userGuild = message.author.guild;
     if(command === 'jah guild'){
        message.reply(userGuild);
