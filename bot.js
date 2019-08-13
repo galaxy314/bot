@@ -140,6 +140,15 @@ client.on('message', message => {
         message.reply(base64data);
     }
     
+    if(message.content.startsWith('jah b642txt')){
+        message.delete();
+        'use strict';
+        let data = message.content.subtr(12);
+        let buff = new Buffer(data, 'base64');
+        let text = buff.toString('ascii');
+        message.reply(text);
+    }
+    
     let userGuild = message.author.guild;
     if(command === 'jah guild'){
        message.reply(userGuild);
