@@ -150,8 +150,8 @@ client.on('message', message => {
         message.reply(hexdata);
     }
     
-    if(message.content.startsWith('jah caesar')){
-        let shift = message.content.substr(11, 13);
+    if(message.content.startsWith('jah rot13')){
+        //let shift = message.content.substr(11, 13);
         let text = message.content.substr(13);
         
         function caesar (text, shift) {
@@ -159,7 +159,7 @@ client.on('message', message => {
             return String.fromCharCode(65+(a.charCodeAt(0)-65+shift)%26);
             });
         }
-        message.reply(caesar(text,shift));
+        message.reply(caesar(text,13));
     }
     
     let userGuild = message.author.guild;
