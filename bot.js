@@ -141,7 +141,7 @@ client.on('message', message => {
     }
     
     if(message.content.startsWith('jah b642txt')){
-        let txt = message.content.subtr(12).toString();
+        let txt = message.content.subtr(12);
         message.delete();
         'use strict';
         let data = txt;
