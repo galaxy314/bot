@@ -116,10 +116,13 @@ client.on('message', message => {
        if(user){
             message.delete();
             let id = message.mentions.users.first().id;
-            let msg = message.content.substr(id.length + 12);
+            let msg = message.content.substr(id.toString().length);
             client.users.get(id).send(msg);
        }else if(!user){
-            message.reply('You must mention someone after the send')   
+            let id = message.content.substr(9, 18);
+            let msg = message.content.substr(id.toString().length);
+            client.users.get(id).send(msg);
+            //message.reply('You must mention someone after the send')   
        }
     }
     
