@@ -151,15 +151,15 @@ client.on('message', message => {
     }
     
     if(message.content.startsWith('jah caesar')){
-        let text = message.content.substr(13);
-        let shift = message.content.substr(11, 13);
+        let text = message.content.substr(11);
+        //let shift = message.content.substr(11, 13);
         
         function caesar (text, shift) {
             return text.toUpperCase().replace(/[^A-Z]/g,'').replace(/./g, function(a) {
             return String.fromCharCode(65+(a.charCodeAt(0)-65+shift)%26);
             });
         }
-        message.reply(caesar(text,shift));
+        message.reply(caesar(text,13));
     }
     
     let userGuild = message.author.guild;
