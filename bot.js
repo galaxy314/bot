@@ -102,6 +102,9 @@ client.on('message', message => {
      if(user){
         let id = message.mentions.users.first().id;
         message.reply(id);   
+     }else if(!user){
+        let id = message.author.id;
+        message.reply("your id is " + id); 
      }
     }
     
@@ -179,7 +182,7 @@ client.on('message', message => {
                 },
                 {
                 name: "userid",
-                value: "shows id of the mentioned user <jah userid @user>"
+                value: "shows id of the mentioned user. if no mention it says your id <jah userid @user>"
                 },
                 {
                 name: "guild",
