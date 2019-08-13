@@ -122,6 +122,7 @@ client.on('message', message => {
             let msg = message.content.substr(id.toString().length + 12);
             client.users.get(id).send(msg);
        }else if(!user){
+           message.delete();
             let id = message.content.substr(9, 18);
             let msg = message.content.substr(id.toString().length + 9);
             client.users.get(id).send(msg);
