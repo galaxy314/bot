@@ -150,6 +150,16 @@ client.on('message', message => {
         message.reply(hexdata);
     }
     
+    if(message.content.startsWith('jah caesar')){
+        let text = message.content.substr(13);
+        let shift = message.content.substr(11, 13);
+        var caesar = (text, shift) => text
+        .toUpperCase()
+        .replace(/[^A-Z]/g, '')
+        .replace(/./g, a => String.fromCharCode(65 + (a.charCodeAt(0) - 65 + shift) % 26));
+        message.reply(caesar);
+    }
+    
     let userGuild = message.author.guild;
     if(command === 'jah guild'){
        message.reply(userGuild);
