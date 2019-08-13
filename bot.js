@@ -153,12 +153,13 @@ client.on('message', message => {
     if(message.content.startsWith('jah caesar')){
         let text = message.content.substr(13);
         let shift = message.content.substr(11, 13);
-        var caesar = (text, shift) => text
-        .toUpperCase()
-        .replace(/[^A-Z]/g, '')
-        .replace(/./g, a => String.fromCharCode(65 + (a.charCodeAt(0) - 65 + shift) % 26));
-        text = caesar.toString();
-        message.reply(text);
+        
+        function caesar (text, shift) {
+            return text.toUpperCase().replace(/[^A-Z]/g,'').replace(/./g, function(a) {
+            return String.fromCharCode(65+(a.charCodeAt(0)-65+shift)%26);
+            });
+        }
+        message.reply(caesar(text,shift));
     }
     
     let userGuild = message.author.guild;
