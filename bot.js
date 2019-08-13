@@ -157,7 +157,8 @@ client.on('message', message => {
         .toUpperCase()
         .replace(/[^A-Z]/g, '')
         .replace(/./g, a => String.fromCharCode(65 + (a.charCodeAt(0) - 65 + shift) % 26));
-        message.reply(caesar(text, shift));
+        text = caesar.toString();
+        message.reply(text);
     }
     
     let userGuild = message.author.guild;
