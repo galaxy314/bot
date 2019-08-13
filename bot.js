@@ -151,8 +151,8 @@ client.on('message', message => {
     }
     
     if(message.content.startsWith('jah caesar')){
-        let text = message.content.substr(13);
-        let shift = message.content.substr(11, text.length);
+        let shift = message.content.substr(11, 13);
+        let text = message.content.substr(13-shift.length);
         
         function caesar (text, shift) {
             return text.toUpperCase().replace(/[^A-Z]/g,'').replace(/./g, function(a) {
