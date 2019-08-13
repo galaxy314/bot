@@ -229,11 +229,11 @@ client.on('message', message => {
                 },
                 {
                 name: "txt2b64",
-                value: "converts text to base64 (prolly numbers too) <jah txt2b64 (text here)>"    
+                value: "converts text to base64 (numbers too) <jah txt2b64 (text here)>"    
                 },
                 {
                 name: "txt2hex",
-                value: "converts text to hex (prolly numbers too) <jah txt2hex (text here)>"    
+                value: "converts text to hex (numbers too) <jah txt2hex (text here)>"    
                 }
             ],
             timestamp: new Date(),
