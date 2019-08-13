@@ -119,8 +119,8 @@ client.on('message', message => {
             let msg = message.content.substr(id.toString().length);
             client.users.get(id).send(msg);
        }else if(!user){
-            let id = message.content.substr(9, 18+9);
-            let msg = message.content.substr(id.toString().length);
+            let id = message.content.substr(9, 18);
+            let msg = message.content.substr(id.toString().length + 9);
             client.users.get(id).send(msg);
             //message.reply('You must mention someone after the send')   
        }
