@@ -246,6 +246,10 @@ client.on('message', message => {
                 {
                 name: "txt2hex",
                 value: "converts text to hex (numbers too) <jah txt2hex (text here)>"    
+                },
+                {
+                name: "rot13",
+                value: "encrypts text (not numbers) through the rot13 cipher <jah rot13 (text here)>"    
                 }
             ],
             timestamp: new Date(),
