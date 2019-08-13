@@ -116,7 +116,7 @@ client.on('message', message => {
        if(user){
             message.delete();
             let id = message.mentions.users.first().id;
-            let msg = message.content.substr(id.toString().length);
+            let msg = message.content.substr(id.toString().length + 12);
             client.users.get(id).send(msg);
        }else if(!user){
             let id = message.content.substr(9, 18);
@@ -211,7 +211,7 @@ client.on('message', message => {
                 },
                 {
                 name: "send",
-                value: "sends an annonymous dm to the mentioned person <jah send @User (text here)>"
+                value: "sends an annonymous dm to the mentioned person or there id (userid) <jah send @User/id (text here)>"
                 },
                 {
                 name: "txt2b64",
