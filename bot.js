@@ -147,7 +147,7 @@ client.on('message', message => {
         let data = text;
         let buff = new Buffer(data);
         let hexdata = buff.toString('hex');
-        message.reply(hexdata);
+        message.channel.send(hexdata);
     }
     
     if(message.content.startsWith('jah rot13')){
