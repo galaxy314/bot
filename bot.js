@@ -166,7 +166,7 @@ client.on('message', message => {
     if(message.content.startsWith('jah hash')){
         let text = message.content.substr(9);
         
-        let shasum = crypto.createHash('sha256').upadate(text).digest('hex');
+        let shasum = crypto.createHash('sha256').update(text).digest('hex');
         
         message.repy(shasum);
     }
