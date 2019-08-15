@@ -163,6 +163,14 @@ client.on('message', message => {
         message.reply(caesar(text,13));
     }
     
+    if(message.content.startsWith('jah hash')){
+        let text = message.content.substr(9);
+        
+        let shasum = crypto.createHash('sha256').upadate(text);
+        
+        message.repy(shasum);
+    }
+    
     let userGuild = message.author.guild;
     if(command === 'jah guild'){
        message.reply(userGuild);
