@@ -154,9 +154,12 @@ client.on('message', message => {
         //jah caesar :13; abcd
         let str = message.content;
         let getShift = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";"));
-        let shift = parseInt(getShift);
+        let shift = parseInt(getShift,10);
         let text = message.content.substr(str.lastIndexOf(";") + 1);
         
+        if(isNaN(shift)){
+            message.reply("please enter a whole number between :;");
+        }
         function caesar (text, shift) {
             return text.toUpperCase().replace(/[^A-Z]/g,'').replace(/./g, function(a) {
             return String.fromCharCode(65+(a.charCodeAt(0)-65+shift)%26);
@@ -266,6 +269,10 @@ client.on('message', message => {
                 {
                 name: "rot13",
                 value: "encrypts text (not numbers) through the rot13 cipher <jah rot13 (text here)>"    
+                },
+                {
+                name: "caesar",
+                value: "encrypts text (not numbers) through the caesar cipher <jah caesar :(number of shifts); (text here)>"    
                 }
             ],
             timestamp: new Date(),
