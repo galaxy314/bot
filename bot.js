@@ -151,9 +151,10 @@ client.on('message', message => {
     }
     
     if(message.content.startsWith('jah caesar')){
-        //jah caesar :13; 
+        //jah caesar :13; abcd
         let str = message.content;
-        let shift = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";"));
+        let getShift = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";"));
+        let shift = Number(getShift);
         let text = message.content.substr(str.lastIndexOf(";"));
         
         function caesar (text, shift) {
