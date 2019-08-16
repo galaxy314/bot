@@ -166,11 +166,9 @@ client.on('message', message => {
     if(message.content.startsWith('jah hash')){
         let text = message.content.substr(9);
         
-        let shasum = crypto.createHash('sha256');
-        shasum.update(text);
-        let hash = shasum.digest('hex');
+        let generated_hash = require(‘crypto’).createHash('sha256').update(text.toString(), 'utf8').digest('hex');
         
-        message.repy(hash);
+        message.repy(generated_hash);
     }
     
     let userGuild = message.author.guild;
