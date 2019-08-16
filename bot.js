@@ -152,6 +152,7 @@ client.on('message', message => {
     
     if(message.content.startsWith('jah caesar')){
         //jah caesar :13; abcd
+        message.delete();
         let str = message.content;
         let getShift = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";"));
         let shift = parseInt(getShift,10);
