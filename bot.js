@@ -154,7 +154,7 @@ client.on('message', message => {
         //jah caesar :13; abcd
         let str = message.content;
         let getShift = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";"));
-        let shift = Number(getShift);
+        let shift = parseInt(getShift);
         let text = message.content.substr(str.lastIndexOf(";"));
         
         function caesar (text, shift) {
@@ -162,7 +162,8 @@ client.on('message', message => {
             return String.fromCharCode(65+(a.charCodeAt(0)-65+shift)%26);
             });
         }
-        message.reply(caesar(text,shift));
+        message.reply(shift)
+        //message.reply(caesar(text,shift));
     }
     
     if(message.content.startsWith('jah rot13')){
