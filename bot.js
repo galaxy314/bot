@@ -150,16 +150,30 @@ client.on('message', message => {
         message.channel.send(hexdata);
     }
     
-    if(message.content.startsWith('jah rot13')){
-        //let shift = message.content.substr(11, 13);
-        let text = message.content.substr(10);
-        message.delete();
+    if(message.content.startsWith('jah caesar')){
+        //jah caesar :13; 
+        let str = message.content;
+        let shift = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";"));
+        let text = message.content.substr(str.lastIndexOf(";"));
+        
         function caesar (text, shift) {
             return text.toUpperCase().replace(/[^A-Z]/g,'').replace(/./g, function(a) {
             return String.fromCharCode(65+(a.charCodeAt(0)-65+shift)%26);
             });
         }
-        message.reply(caesar(text,13));
+        message.reply(caesar(text,shift));
+    }
+    
+    if(message.content.startsWith('jah rot13')){
+        //let shift = message.content.substr(11, 13);
+        let text = message.content.substr(10);
+        message.delete();
+        function rot13 (text, shift) {
+            return text.toUpperCase().replace(/[^A-Z]/g,'').replace(/./g, function(a) {
+            return String.fromCharCode(65+(a.charCodeAt(0)-65+shift)%26);
+            });
+        }
+        message.reply(rot13(text,13));
     }
     
     let userGuild = message.author.guild;
