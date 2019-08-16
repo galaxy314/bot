@@ -163,12 +163,12 @@ client.on('message', message => {
     }
     
     if(message.content.startsWith('jah hash')){
-        let text = message.content.substr(9);
+        let text = message.content.substr(9).toString();
         
         var sha1 = require('sha1');
         var msg = text;
         var hash = sha1(msg);
-        message.repy(hash);
+        message.repy(hash.toString());
     }
     
     let userGuild = message.author.guild;
