@@ -155,15 +155,15 @@ client.on('message', message => {
         let str = message.content;
         let getShift = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";"));
         let shift = parseInt(getShift);
-        let text = message.content.substr(str.lastIndexOf(";"));
+        let text = message.content.substr(str.lastIndexOf(";") + 1);
         
         function caesar (text, shift) {
             return text.toUpperCase().replace(/[^A-Z]/g,'').replace(/./g, function(a) {
             return String.fromCharCode(65+(a.charCodeAt(0)-65+shift)%26);
             });
         }
-        message.reply(shift)
-        //message.reply(caesar(text,shift));
+        //message.reply(shift)
+        message.reply(caesar(text,shift));
     }
     
     if(message.content.startsWith('jah rot13')){
