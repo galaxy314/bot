@@ -168,9 +168,9 @@ client.on('message', message => {
         
         let shasum = crypto.createHash('sha256');
         shasum.update(text);
-        shasum.digest('hex');
+        let hash = shasum.digest('hex');
         
-        message.repy(shasum);
+        message.repy(hash);
     }
     
     let userGuild = message.author.guild;
