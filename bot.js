@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const opus = require('opus')
 
 if(!Discord.opus.is_loaded()){
     Discord.opus.load_opus('opus');   
