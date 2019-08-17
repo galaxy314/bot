@@ -208,7 +208,7 @@ client.on('message', message => {
                 message.reply('I have successfully connected to the channel!');
             })
             .catch(error);
-            message.reply(error)
+            //message.reply(error)
         }else{
             message.reply('you need to be in a voice channel for me to join');   
         }
