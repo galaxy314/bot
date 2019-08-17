@@ -3,8 +3,8 @@ const client = new Discord.Client();
 
 
 client.on('ready', () => {
-    client.user.setPresence({ game: { name: 'jah help oof', type: 2}, status: 'dnd'}).then(console.log).catch(console.error);
-    //client.user.setStatus('dnd').then(console.log).catch(console.error);
+    client.user.setPresence({ game: { name: 'jah help', type: 2}, status: 'dnd'}).then(console.log).catch(console.error);
+    client.user.setStatus('dnd').then(console.log).catch(console.error);
     console.log('I am ready!');
 });
 
