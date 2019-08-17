@@ -200,7 +200,7 @@ client.on('message', message => {
            message.reply('You are not my inspiration'); 
     }
     
-    if(message.content.startsWith('jah speak').toLowerCase()){
+    if(message.content.startsWith('jah speak')){
         let error = console.log;
         let command = message.content.substr(10);
         let yeetFile = 'http://peal.io/p/yeet';
