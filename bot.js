@@ -200,8 +200,10 @@ client.on('message', message => {
            message.reply('You are not my inspiration'); 
     }
     
-    if(command === 'jah speak'){
+    if(message.content.startsWith('jah speak').toLowerCase()){
         let error = console.log;
+        let command = message.content.substr(10);
+        let yeetFile = 'https://www.youtube.com/watch?v=fB4fOBl6zfA';
         if(message.member.voiceChannel){
             message.member.voiceChannel.join()
             .then(connection => { // Connection is an instance of VoiceConnection
@@ -212,13 +214,24 @@ client.on('message', message => {
         }else{
             message.reply('you need to be in a voice channel for me to join');   
         }
+        if(command === 'yeet'){
+            if(message.guild.voiceConnection){
+                if(message.member.voiceChannel){
+                    connection.playArbitraryInput(yeetFile);
+                }else{
+                    message.reply('You must be in a voice channel to use this command');   
+                }
+            }else{
+                message.reply('I must be in a voice channel to speak');
+            }
+        }
     }
     
     if(command === 'jah stop'){
         if(message.guild.voiceConnection){
             message.guild.voiceConnection.disconnect();   
         }else{
-         message.reply('I must be in a voice channel to be disconnected');   
+            message.reply('I must be in a voice channel to be disconnected');   
         }
     }
     
