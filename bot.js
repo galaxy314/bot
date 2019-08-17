@@ -208,23 +208,24 @@ client.on('message', message => {
             message.member.voiceChannel.join()
             .then(connection => { // Connection is an instance of VoiceConnection
                 message.reply('I have successfully connected to the channel!');
+                connection.playArbitraryInput(yeetFile);
             })
             .catch(error);
             //message.reply(error)
         }else{
             message.reply('you need to be in a voice channel for me to join');   
         }
-        if(command === 'yeet'){
-            if(message.guild.voiceConnection){
-                if(message.member.voiceChannel){
-                    connection.playArbitraryInput(yeetFile);
-                }else{
-                    message.reply('You must be in a voice channel to use this command');   
-                }
-            }else{
-                message.reply('I must be in a voice channel to speak');
-            }
-        }
+//         if(command === 'yeet'){
+//             if(message.guild.voiceConnection){
+//                 if(message.member.voiceChannel){
+//                     connection.playArbitraryInput(yeetFile);
+//                 }else{
+//                     message.reply('You must be in a voice channel to use this command');   
+//                 }
+//             }else{
+//                 message.reply('I must be in a voice channel to speak');
+//             }
+//         }
     }
     
     if(command === 'jah stop'){
