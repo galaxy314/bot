@@ -203,12 +203,12 @@ client.on('message', message => {
     if(message.content.startsWith('jah speak').toLowerCase()){
         let error = console.log;
         let command = message.content.substr(10);
-        let yeetFile = 'https://www.youtube.com/watch?v=fB4fOBl6zfA';
+        //let yeetFile = 'https://www.youtube.com/watch?v=fB4fOBl6zfA';
         if(message.member.voiceChannel){
             message.member.voiceChannel.join()
             .then(connection => { // Connection is an instance of VoiceConnection
                 message.reply('I have successfully connected to the channel!');
-                connection.playArbitraryInput(yeetFile);
+                //connection.playArbitraryInput(yeetFile);
             })
             .catch(error);
             //message.reply(error)
