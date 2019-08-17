@@ -204,12 +204,12 @@ client.on('message', message => {
     if(message.content.startsWith('jah speak')){
         let error = console.log;
         let command = message.content.substr(10);
-        let yeetFile = 'http://peal.io/p/yeet';
+        //let yeetFile = 'http://peal.io/p/yeet';
         if(message.member.voiceChannel){
             message.member.voiceChannel.join()
             .then(connection => { // Connection is an instance of VoiceConnection
                 message.reply('I have successfully connected to the channel!');
-                connection.playArbitraryInput(yeetFile);
+                //connection.playArbitraryInput(yeetFile);
             })
             .catch(error);
             //message.reply(error)
