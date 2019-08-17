@@ -192,30 +192,30 @@ client.on('message', message => {
            message.reply('You are not my inspiration'); 
     }
     
-//     if(message.content.startsWith('jah speak')){
-//         let error = console.log;
-//         let command = message.content.substr(10);
-//         //let yeetFile = 'http://peal.io/p/yeet';
-//         if(message.member.voiceChannel){
-//             message.member.voiceChannel.join()
-//             .then(connection => { // Connection is an instance of VoiceConnection
-//                 message.reply('I have successfully connected to the channel!');
-//                 //connection.playArbitraryInput(yeetFile);
-//             })
-//             .catch(error);
-//             //message.reply(error)
-//         }else{
-//             message.reply('you need to be in a voice channel for me to join');   
-//         }
-//     }
+    if(message.content.startsWith('jah speak')){
+        let error = console.log;
+        let command = message.content.substr(10);
+        let yeetFile = 'http://peal.io/p/yeet';
+        if(message.member.voiceChannel){
+            message.member.voiceChannel.join()
+            .then(connection => { // Connection is an instance of VoiceConnection
+                message.reply('I have successfully connected to the channel!');
+                connection.playArbitraryInput(yeetFile);
+            })
+            .catch(error);
+            //message.reply(error)
+        }else{
+            message.reply('you need to be in a voice channel for me to join');   
+        }
+    }
     
-//     if(command === 'jah stop'){
-//         if(message.guild.voiceConnection){
-//             message.guild.voiceConnection.disconnect();   
-//         }else{
-//             message.reply('I must be in a voice channel to be disconnected');   
-//         }
-//     }
+    if(command === 'jah stop'){
+        if(message.guild.voiceConnection){
+            message.guild.voiceConnection.disconnect();   
+        }else{
+            message.reply('I must be in a voice channel to be disconnected');   
+        }
+    }
     
     if(command === 'jah help'){
             message.channel.send({embed: {
