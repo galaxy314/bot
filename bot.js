@@ -201,12 +201,13 @@ client.on('message', message => {
     }
     
     if(command === 'jah speak'){
+        let error = console.log;
         if(message.member.voiceChannel){
             message.member.voiceChannel.join()
             .then(connection => { // Connection is an instance of VoiceConnection
                 message.reply('I have successfully connected to the channel!');
             })
-            .catch(console.log);
+            .catch(error);
         }else{
             message.reply('you need to be in a voice channel for me to join');   
         }
