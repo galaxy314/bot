@@ -1,6 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+if(!discord.opus.is_loaded()){
+    discord.opus.load_opus('opus');   
+}
 
 client.on('ready', () => {
     client.user.setPresence({ game: { name: 'jah help', type: 2}, status: 'dnd'}).then(console.log).catch(console.error);
