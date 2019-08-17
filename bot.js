@@ -214,6 +214,14 @@ client.on('message', message => {
         }
     }
     
+    if(command === 'jah stop'){
+        if(message.guild.voiceConnection){
+            message.guild.voiceConnection.disconnect();   
+        }else{
+         message.reply('I must be in a voice channel to be disconnected');   
+        }
+    }
+    
     if(command === 'jah help'){
             message.channel.send({embed: {
             color: 3447003,
