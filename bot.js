@@ -200,6 +200,16 @@ client.on('message', message => {
            message.reply('You are not my inspiration'); 
     }
     
+    if(command === 'jah speak'){
+        if(message.member.voiceChannel){
+            message.member.voiceChannel.join().then(connection => {
+                message.reply('Jah has joined')
+            });   
+        }else{
+            message.reply('you need to be in a voice channel for me to join');   
+        }
+    }
+    
     if(command === 'jah help'){
             message.channel.send({embed: {
             color: 3447003,
