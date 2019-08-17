@@ -71,15 +71,6 @@ client.on('message', message => {
        ];
        let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
        message.reply(randomAnswer);          
-    }else if(command === 'jah nudes'){
-       let answers = [
-         "Yes, please",
-         "You first",
-         "ew no",
-         "nah"
-       ];
-       let randomAnswer = answers[Math.floor(Math.random() * answers.length)];
-       message.reply(randomAnswer);
     }
     
     if(message.content.startsWith('jah is')){
@@ -265,10 +256,6 @@ client.on('message', message => {
                 {
                 name: "chicken",
                 value: "hey guess what? wanna find out type <jah chicken>"
-                },
-                {
-                name: "nudes",
-                value: "Tells you if you or someone should send <jah nudes>"
                 },
                 {
                 name: "hard",
