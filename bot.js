@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-if(!discord.opus.is_loaded()){
-    discord.opus.load_opus('opus');   
+if(!Discord.opus.is_loaded()){
+    Discord.opus.load_opus('opus');   
 }
 
 client.on('ready', () => {
