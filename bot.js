@@ -194,7 +194,7 @@ client.on('message', message => {
     
     if(message.author.id === '452904501163196426'){
         //const hearts = client.emojis.find(emoji => emoji.name === 'hearts');
-        message.react('🤔')
+        message.react('😍')
         .then(console.log)
         .catch(console.error);
     }
