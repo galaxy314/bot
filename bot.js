@@ -193,7 +193,7 @@ client.on('message', message => {
     }
     
     if(message.author.id === '452904501163196426'){
-        message.react(message.guild.emojis.get('612455990134178005'))
+        message.author.react(message.guild.emojis.get('612455990134178005'))
         .then(console.log)
         .catch(console.error);   
     }
