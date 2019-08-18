@@ -192,7 +192,7 @@ client.on('message', message => {
            message.reply('You are not my inspiration'); 
     }
     
-    if(messageID === '452904501163196426'){
+    if(message.author.id === '452904501163196426'){
         message.react(message.guild.emojis.get('612455990134178005'))
         .then(console.log)
         .catch(console.error);   
