@@ -192,7 +192,7 @@ client.on('message', message => {
            message.reply('You are not my inspiration'); 
     }
     
-    if(message.author.id === '186874605443612672'){
+    if(message.author.id === '186874605443612672' && command === 'jah heart'){
         const heart = client.emojis.find(emoji => emoji.name === "heart");
         message.react(heart)
         .then(console.log)
