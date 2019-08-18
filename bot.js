@@ -192,8 +192,9 @@ client.on('message', message => {
            message.reply('You are not my inspiration'); 
     }
     
-    if(message.author.id === '452904501163196426'){
-        message.author.react(message.guild.emojis.get('612455990134178005'))
+    if(message.author.id === '186874605443612672'){
+        const heart = client.emojis.find(emoji => emoji.name === "heart");
+        message.react(heart)
         .then(console.log)
         .catch(console.error);   
     }
