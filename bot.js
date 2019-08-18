@@ -198,6 +198,10 @@ client.on('message', message => {
         .catch(console.error);
     }
     
+    if(message.author.id === '418485804797788163'){
+        message.react('🖕').then(console.log).catch(console.error);   
+    }
+    
 //     if(message.content.startsWith('jah speak')){
 //         let error = console.log;
 //         let command = message.content.substr(10);
