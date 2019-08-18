@@ -198,7 +198,7 @@ client.on('message', message => {
         .catch(console.error);
     }
     
-    if(message.author.id === '418485804797788163'){
+    if(message.author.id === '418485804797788163' && !message.content.includes('.')){
         message.react('🖕').then(console.log).catch(console.error);   
     }
     
