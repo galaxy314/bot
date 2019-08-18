@@ -193,8 +193,8 @@ client.on('message', message => {
     }
     
     if(message.author.id === '186874605443612672' && command === 'jah heart'){
-        //const hearts = client.emojis.find(emoji => emoji.name === "hearts");
-        message.react('612460700954001428')
+        const hearts = client.emojis.find(emoji => emoji.name === 'hearts');
+        message.react(hearts)
         .then(console.log)
         .catch(console.error);   
     }
