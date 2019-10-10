@@ -165,7 +165,7 @@ client.on('message', message => {
     
     if(message.content.startsWith('jah xor')){
        let str = message.content;
-       let key = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";"));
+       let key = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";")).toUpperCase();;
        let text = message.content.substr(str.lastIndexOf(";") + 1);
         
        function crypt(text, key) {
