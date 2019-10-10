@@ -163,6 +163,31 @@ client.on('message', message => {
         }
     }
     
+    if(message.content.startsWith('jah xor')){
+       let str = message.content;
+       let getkey = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";"));
+       let key = parseInt(getkey,10);
+       let text = message.content.substr(str.lastIndexOf(";") + 1);
+        
+       function crypt(text, key) {
+            var output = [];
+            var charCode;
+            for (var i = 0; i < text.length; i++) {
+                charCode = text.charCodeAt(i) ^ key[i % key.length].charCodeAt(0);
+
+            output.push(String.fromCharCode(charCode));
+            }
+            return output.join("");
+        } 
+        
+        if(isNaN(key)){
+            message.reply("please enter a whole number between :;");
+        }else if(!isNaN(key)){
+            message.reply(crypt(text,key));
+        }
+        
+    }
+    
     if(message.content.startsWith('jah rot13')){
         //let shift = message.content.substr(11, 13);
         let text = message.content.substr(10);
