@@ -178,13 +178,7 @@ client.on('message', message => {
             }
             return output.join("");
         } 
-        
-        if(isNaN(key)){
-            message.reply("please enter a whole number between :;");
-        }else if(!isNaN(key)){
             message.reply(crypt(text,key));
-        }
-        
     }
     
     if(message.content.startsWith('jah rot13')){
