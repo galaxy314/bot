@@ -184,8 +184,8 @@ client.on('message', message => {
     var channelID = '631853004286328839';
     var SID = '631969544805679124';
     var LID = '631969587058966548';
-    if(channelID){
-       if(message.member.roles.has('631969587058966548')){
+    if(message.channel.id === channelID){
+       if(message.member.roles.has(SID)){
             message.channel.send("you lost the silent game");
           }else{
             message.channel.send("you're a loser stfu");   
