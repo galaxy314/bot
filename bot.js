@@ -229,7 +229,7 @@ client.on('message', message => {
     
     if(message.author.id === '418485804797788163' && !message.content.includes('.')){
         message.react('🖕').then(console.log).catch(console.error);
-        message.member.kick().then(console.log).catch(console.error);
+        //message.member.kick().then(console.log).catch(console.error);
     }
     
 //     if(message.content.startsWith('jah speak')){
