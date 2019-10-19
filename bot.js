@@ -141,6 +141,35 @@ client.on('message', message => {
         let hexdata = buff.toString('hex');
         message.channel.send(hexdata);
     }
+    //prime factorization
+    if(message.content.startsWith('jah factor')){
+        let getNum = message.content.substr(10);
+        let number = parseInt(getNum, 10);
+        
+        function factor(num){
+            var primeFactors = [];
+            while (num % 2 === 0) {
+                primeFactors.push(2);
+                num = num / 2;
+            }
+            var sqrtNum = Math.sqrt(num);
+            for (var i = 3; i <= sqrtNum; i++) {
+                while (num % i === 0) {
+                    primeFactors.push(i);
+                    num = num / i;
+                }
+            }
+            if (num > 2) {
+                primeFactors.push(num);
+            }
+            return primeFactors;
+        }
+        if(isNaN(number)){
+            message.reply("please enter a whole number, jah factor (number here)");
+        }else if(!isNaN(number)){
+            message.reply(factor(number));
+        }
+    }
     
     if(message.content.startsWith('jah caesar')){
         //jah caesar :13; abcd
@@ -181,6 +210,7 @@ client.on('message', message => {
             message.reply(crypt(text,key));
     }
     
+    //silent game
     var channelID = '631853004286328839';
     var SID = '631969544805679124';
     var LID = '631969587058966548';
