@@ -34,7 +34,7 @@ client.on('message', message => {
             let channelID = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";"));
             let msg = message.content.substr(str.lastIndexOf(";") + 1);
             var id = channelID.toString();
-            client.channels.find("id", id).send(msg).catch(console.error);
+            client.channels.get(`id`).send(msg).catch(console.error);
             message.reply('your message has been sent');
         }
     }
