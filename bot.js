@@ -258,7 +258,7 @@ client.on('message', message => {
             
             if(!isNaN(result)){
                 return result;
-            }else if(){
+            }else if(isNaN(result)){
                 message.reply("please use a fraction (ie. 1-1/2 or 1/2)").catch(console.error);     
             }
         }
