@@ -230,7 +230,7 @@ client.on('message', message => {
        if(isFloat(dec)){ 
             message.channel.send(fraction(dec)).then(console.log).catch(console.error);
        }else if(!isFloat(dec)){
-           message.repy("please use a decimal").then(console.log).catch(console.error);
+           message.reply("please use a decimal").then(console.log).catch(console.error);
        }
 }
     
