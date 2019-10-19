@@ -298,7 +298,7 @@ client.on('message', message => {
             fields: [
                 {
                 name: "Commands",
-                value: "each command starts with the prefix jah(all lower case) examples in between <>"
+                value: "each command starts with the prefix jah(all lower case) examples in between <> (don't use the <> in command)"
                 },
                 {
                 name: "jah",
@@ -359,6 +359,10 @@ client.on('message', message => {
                 {
                 name: "caesar",
                 value: "encrypts text (not numbers) through the caesar cipher <jah caesar :(number of shifts); (text here)>"    
+                },
+                {
+                name:"factor",
+                value: "prime Factorization of a number <jah factor (number)>"   
                 }
             ],
             timestamp: new Date(),
