@@ -31,7 +31,7 @@ client.on('message', message => {
     if(message.channel.type == "dm"){
         if(message.content.startsWith('jah say')){
             let str = message.content.substr(8);
-            client.channels.get('581915194066993152').send(str).catch(console.error);
+            client.channels.get('581915194066993152').send(str).then(console.log).catch(console.error);
             message.reply('your message has been sent');
         }
     }
