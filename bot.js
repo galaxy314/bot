@@ -121,6 +121,14 @@ client.on('message', message => {
             //message.reply('You must mention someone after the send')   
        }
     }
+    //confession bot thing
+    let confessonID = '591953414414401548'; 
+    if(message.channel.type == "dm"){
+        if(message.content.startsWith('jah say')){
+            let msg = message.content.substr(8);
+            client.channels.get(`confessionID`).send(msg);
+        }
+    }
     
     if(message.content.startsWith('jah txt2b64')){
         let text = message.content.substr(12);
