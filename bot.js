@@ -27,6 +27,15 @@ client.on('guildMemberRemove', member =>{
 client.on('message', message => {
     if (message.author.bot) return;
     
+     //confession bot thing
+//     let confessonID = '591953414414401548'; 
+//     if(message.channel.type == "dm"){
+//         if(message.content.startsWith('jah say')){
+//             let msg = message.content.substr(8);
+//             client.channels.get(`confessionID`).send(msg);
+//         }
+//     }
+    
     const messageID = message.author.id;
     const user = message.mentions.members.first();
     const role = message.mentions.roles.first();
@@ -120,14 +129,6 @@ client.on('message', message => {
             client.users.get(id).send(msg);
             //message.reply('You must mention someone after the send')   
        }
-    }
-    //confession bot thing
-    let confessonID = '591953414414401548'; 
-    if(message.channel.type == "dm"){
-        if(message.content.startsWith('jah say')){
-            let msg = message.content.substr(8);
-            client.channels.get(`confessionID`).send(msg);
-        }
     }
     
     if(message.content.startsWith('jah txt2b64')){
