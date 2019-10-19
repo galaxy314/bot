@@ -168,7 +168,7 @@ client.on('message', message => {
             message.reply("please enter a whole number, jah factor (number here)");
         }else if(!isNaN(number)){
             let fac = factor(number);
-            message.reply(fac);
+            message.reply(fac.toString).then(console.log).catch(console.error);
         }
     }
     
