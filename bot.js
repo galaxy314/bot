@@ -235,7 +235,7 @@ client.on('message', message => {
     }
     
     if(message.content.startsWith('jah frc2dec')){
-        let num = message.content.subtr(12);
+        let num = message.content.substr(12);
         function toDeci(fraction) {
             fraction = fraction.toString();
             var result,wholeNum=0, frac, deci=0;
