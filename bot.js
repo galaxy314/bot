@@ -30,9 +30,10 @@ client.on('message', message => {
     //confession bot thing
     if(message.channel.type == "dm"){
         if(message.content.startsWith('jah say')){
-            let msg = message.content.substr(8);
-            let channelID = msg.substr(msg.lastIndexOf(":") + 1, msg.lastIndexOf(";"));
-            client.channels.get(channelID.toString()).send(msg).catch(console.error);
+            let str = message.content;
+            let channelID = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";"));
+            let msg = message.content.substr(str.lastIndexOf(";") + 1);
+            client.channels.get(channelID).send(msg).catch(console.error);
             message.reply('your message has been sent');
         }
     }
