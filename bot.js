@@ -255,7 +255,12 @@ client.on('message', message => {
             }else{
                 result = fraction
             }
-            return result;
+            
+            if(!isNaN(result)){
+                return result;
+            }else if(){
+                message.reply("please use a fraction (ie. 1-1/2 or 1/2)").catch(console.error);     
+            }
         }
         message.channel.send(toDeci(num)).catch(console.error);
     }
