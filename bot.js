@@ -26,12 +26,13 @@ client.on('guildMemberRemove', member =>{
 
 client.on('message', message => {
     if (message.author.bot) return;
-     //confession bot thing
+     
+    //confession bot thing
     let confessonID = '591953414414401548'; 
     if(message.channel.type == "dm"){
         if(message.content.startsWith('jah say')){
             let msg = message.content.substr(8);
-            client.channels.get(`confessionID`).send(msg).catch(console.error);
+            client.channels.get(confessionID).send(msg).catch(console.error);
         }
     }
     if(message.channel.type == "dm") return;
