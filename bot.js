@@ -31,10 +31,7 @@ client.on('message', message => {
     if(message.channel.type == "dm"){
         if(message.content.startsWith('jah say')){
             let str = message.content.substr(8);
-            //let channelID = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";"));
-            //let msg = message.content.substr(str.lastIndexOf(";") + 1);
-            var id = channelID;
-            client.channels.get('591953414414401548').send(str).catch(console.error);
+            client.channels.get('581915194066993152').send(str).catch(console.error);
             message.reply('your message has been sent');
         }
     }
