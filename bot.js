@@ -460,6 +460,10 @@ client.on('message', message => {
                 {
                 name:"dec2frc",
                 value:"Converts a decimal to its fraction counterpart <jah dec2frc (decimal)>"    
+                },
+                {
+                name:"frc2dec",
+                value:"converts fractions to decimals <jah frc2dec (1-1/2 or 1/2 etc)> "
                 }
             ],
             timestamp: new Date(),
