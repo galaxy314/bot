@@ -168,7 +168,7 @@ client.on('message', message => {
             message.reply("please enter a whole number, jah factor (number here)");
         }else if(!isNaN(number)){
             let fac = factor(number).toString();
-            message.reply(fac).then(console.log).catch(console.error);
+            message.channel.send("The prime factors of " + number + " is " + fac).then(console.log).catch(console.error);
         }
     }
     
