@@ -33,8 +33,8 @@ client.on('message', message => {
             let str = message.content;
             let channelID = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";"));
             let msg = message.content.substr(str.lastIndexOf(";") + 1);
-            var id = channelID.toString();
-            client.channels.get(`id`).send(msg).catch(console.error);
+            var id = channelID;
+            client.channels.get(id).send(msg).catch(console.error);
             message.reply('your message has been sent');
         }
     }
