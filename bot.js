@@ -222,7 +222,16 @@ client.on('message', message => {
             //return the fraction after simplifying it
             return ((whole==0)?"" : whole+" ")+decimal/t+"/"+num/t;
        }
-       message.channel.send(fraction(dec));
+       
+       function isFloat(n){
+             return n === +n && n !== (n|0);
+       } 
+        
+       if(isFloat(dec)){ 
+            message.channel.send(fraction(dec)).then(console.log).catch(console.error);
+       }else if(!isFloat(dec)){
+           message.repy("please use a decimal").then(console.log).catch(console.error);
+       }
 }
     
     if(message.content.startsWith('jah caesar')){
