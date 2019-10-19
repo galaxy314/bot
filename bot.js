@@ -232,7 +232,33 @@ client.on('message', message => {
        }else if(!isFloat(dec)){
            message.reply("please use a decimal").then(console.log).catch(console.error);
        }
-}
+    }
+    
+    if(message.content.startsWith('jah frc2dec')){
+        let num = message.content.subtr(12);
+        function toDeci(fraction) {
+            fraction = fraction.toString();
+            var result,wholeNum=0, frac, deci=0;
+            if(fraction.search('/') >=0){
+                if(fraction.search('-') >=0){
+                    wholeNum = fraction.split('-');
+                    frac = wholeNum[1];
+                    wholeNum = parseInt(wholeNum,10);
+                }else{
+                    frac = fraction;
+                }
+                if(fraction.search('/') >=0){
+                    frac =  frac.split('/');
+                    deci = parseInt(frac[0], 10) / parseInt(frac[1], 10);
+                }
+                result = wholeNum+deci;
+            }else{
+                result = fraction
+            }
+            return result;
+        }
+        message.channel.send(toDeci(num)).catch(console.error);
+    }
     
     if(message.content.startsWith('jah caesar')){
         //jah caesar :13; abcd
