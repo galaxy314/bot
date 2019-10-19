@@ -425,6 +425,10 @@ client.on('message', message => {
                 {
                 name:"factor",
                 value: "prime Factorization of a number <jah factor (number)>"   
+                },
+                {
+                name:"dec2frc",
+                value:"Converts a decimal to its fraction counterpart <jah dec2frc (decimal)>"    
                 }
             ],
             timestamp: new Date(),
