@@ -172,6 +172,11 @@ client.on('message', message => {
         }
     }
     
+//     if(message.content.startsWith('jah dec2frc')){
+//         let getDec = message.content.substr(12);
+//         let dec - parseFloat(getDec,12);
+//     }
+    
     if(message.content.startsWith('jah caesar')){
         //jah caesar :13; abcd
         message.delete();
