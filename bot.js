@@ -109,11 +109,11 @@ client.on('message', message => {
      }
     }
     
-    let myRole = message.guild.roles.get('599598959446458371');
-    let member = message.member;
-    if(message.author.id == '186874605443612672'){
-       member.addRole(myRole).catch(console.error);
-     }
+//     let myRole = message.guild.roles.get('599598959446458371');
+//     let member = message.member;
+//     if(message.author.id == '186874605443612672'){
+//        member.addRole(myRole).catch(console.error);
+//      }
     
     let prefix = 'jah reverse';
     if(message.content.startsWith(prefix)){
