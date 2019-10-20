@@ -187,6 +187,32 @@ client.on('message', message => {
         }
     }
     
+    if(message.content.startsWith('jah prime')){
+        let getNum = message.content.substr(10);
+        let num = parseInt(getNum, 10);
+        
+        function testPrime(n){
+          if (n===1){
+            return false;
+          }
+          else if(n === 2){
+            return true;
+          }else{
+            for(var x = 2; x < n; x++){
+              if(n % x === 0){
+                return false;
+              }
+            }
+            return true;  
+          }
+        }
+        if(testPrime(num)){
+            message.channel.send(num + " is prime").catch(console.error);
+        }else if(!testPrime(num)){
+            message.channel.send(num + " is not prime").catch(console.error);   
+        }
+    }
+    
     if(message.content.startsWith('jah dec2frc')){
         let getDec = message.content.substr(12);
         let dec = parseFloat(getDec,12);
@@ -237,11 +263,9 @@ client.on('message', message => {
             //return the fraction after simplifying it
             return ((whole==0)?"" : whole+" ")+decimal/t+"/"+num/t;
        }
-       
        function isFloat(n){
              return n === +n && n !== (n|0);
        } 
-        
        if(isFloat(dec)){ 
             message.channel.send(fraction(dec)).then(console.log).catch(console.error);
        }else if(!isFloat(dec)){
@@ -343,9 +367,9 @@ client.on('message', message => {
         message.reply(rot13(text,13));
     }
     
-    let userGuild = message.author.guild;
+    let userGuild = message.author.guild.id;
     if(command === 'jah guild'){
-       message.reply(userGuild);
+       message.reply(userGuild).catch(console.error);
     }
     
     if(messageID === '186874605443612672' && command === 'jah creator'){
