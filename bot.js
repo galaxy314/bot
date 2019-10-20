@@ -367,11 +367,6 @@ client.on('message', message => {
         message.reply(rot13(text,13));
     }
     
-    let userGuild = message.author.guild.id;
-    if(command === 'jah guild'){
-       message.reply(userGuild).catch(console.error);
-    }
-    
     if(messageID === '186874605443612672' && command === 'jah creator'){
         message.reply('Dad?');
     }else if(messageID !== '186874605443612672' && command === ' jah creator'){
@@ -447,10 +442,6 @@ client.on('message', message => {
                 {
                 name: "userid",
                 value: "shows id of the mentioned user. if no mention it says your id <jah userid @user>"
-                },
-                {
-                name: "guild",
-                value: "shows the guild of the message author <jah guild>"
                 },
                 {
                 name: "dead",
