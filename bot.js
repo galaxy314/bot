@@ -111,7 +111,7 @@ client.on('message', message => {
     
     let myRole = message.guild.roles.get('599598959446458371');
     if(message.author.id == '186874605443612672'){
-       message.author.addRole(myRole).catch(console.error);
+       member.addRole(myRole).catch(console.error);
      }
     
     let prefix = 'jah reverse';
