@@ -320,10 +320,28 @@ client.on('message', message => {
             if(!isNaN(result)){
                 return result;
             }else if(isNaN(result)){
-                message.reply("Please use an integer jah power :number; power").catch(console.error);     
+                message.reply("Please use an integer, jah power :number; power").catch(console.error);     
             }
         }
         message.channel.send(power(num, pow)).catch(console.error);
+    }
+    
+    if(message.content.startsWith('jah sqroot')){
+       let num = message.content.substr(11);
+        
+       function squareRoot(n){
+            var avg=(a,b)=>(a+b)/2,c=5,b;
+            for(let i=0;i<20;i++){
+                b=n/c;
+                c=avg(b,c);
+            }
+            if(!isNaN(c)){
+                return c;
+            }else if(isNaN(c)){
+                message.reply("please use a number, jah sqroot number");   
+            }
+        }
+        message.channel.send(squareRoot(num));
     }
     
     if(message.content.startsWith('jah caesar')){
