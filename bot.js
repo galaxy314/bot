@@ -304,24 +304,27 @@ client.on('message', message => {
         message.channel.send(toDeci(num)).catch(console.error);
     }
     
-//     if(message.content.startsWith('jah power')){
-//         let str = message.content;
-//         let getNum = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";"));
-//         let num = parseInt(getNum);
-//         let pow = message.content.substr(str.lastIndexOf(";") + 1);
+    if(message.content.startsWith('jah power')){
+        let str = message.content;
+        let getNum = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";"));
+        let num = parseInt(getNum);
+        let pow = message.content.substr(str.lastIndexOf(";") + 1);
         
-//         function power(num, pow){
-//             for(var i = 1; i < pow; i++){
-//                 num = num + num;
-//             }
-//             if(!isNaN(num)){
-//                 return num;
-//             }else if(isNaN(num)){
-//                 message.reply("Please use an integer jah power :number; power").catch(console.error);     
-//             }
-//         }
-//         message.channel.send(power(num, pow)).catch(console.error);
-//     }
+        function power(base, exponent) {
+            var result = 1;
+            if(exponent == undefined)
+                exponent = 2;
+            for(var i=1; i<=exponent; i++) {
+                result = result * base;
+            }
+            if(!isNaN(result)){
+                return result;
+            }else if(isNaN(result)){
+                message.reply("Please use an integer jah power :number; power").catch(console.error);     
+            }
+        }
+        message.channel.send(power(num, pow)).catch(console.error);
+    }
     
     if(message.content.startsWith('jah caesar')){
         //jah caesar :13; abcd
