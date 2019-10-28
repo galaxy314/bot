@@ -304,6 +304,25 @@ client.on('message', message => {
         message.channel.send(toDeci(num)).catch(console.error);
     }
     
+    if(message.content.startsWith('jah power')){
+        let str = message.content;
+        let getPow = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";"));
+        let pow = parseInt(getPow,10);
+        let num = message.content.substr(str.lastIndexOf(";") + 1);
+        
+        function power(num, pow){
+            for(var i = 0; i < pow; i++){
+                num = num * i
+            }
+            if(!isNaN(num)){
+                return num;
+            }else if(isNaN(num)){
+                message.reply("Please use an integer jah power :power; number").catch(console.error);     
+            }
+        }
+        message.channel.send(power(num, pow)).catch(console.error);
+    }
+    
     if(message.content.startsWith('jah caesar')){
         //jah caesar :13; abcd
         message.delete();
