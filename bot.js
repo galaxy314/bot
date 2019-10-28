@@ -304,24 +304,24 @@ client.on('message', message => {
         message.channel.send(toDeci(num)).catch(console.error);
     }
     
-    if(message.content.startsWith('jah power')){
-        let str = message.content;
-        let getNum = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";"));
-        let num = parseInt(getNum);
-        let pow = message.content.substr(str.lastIndexOf(";") + 1);
+//     if(message.content.startsWith('jah power')){
+//         let str = message.content;
+//         let getNum = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";"));
+//         let num = parseInt(getNum);
+//         let pow = message.content.substr(str.lastIndexOf(";") + 1);
         
-        function power(num, pow){
-            for(var i = 1; i < pow; i++){
-                num = num + num;
-            }
-            if(!isNaN(num)){
-                return num;
-            }else if(isNaN(num)){
-                message.reply("Please use an integer jah power :number; power").catch(console.error);     
-            }
-        }
-        message.channel.send(power(num, pow)).catch(console.error);
-    }
+//         function power(num, pow){
+//             for(var i = 1; i < pow; i++){
+//                 num = num + num;
+//             }
+//             if(!isNaN(num)){
+//                 return num;
+//             }else if(isNaN(num)){
+//                 message.reply("Please use an integer jah power :number; power").catch(console.error);     
+//             }
+//         }
+//         message.channel.send(power(num, pow)).catch(console.error);
+//     }
     
     if(message.content.startsWith('jah caesar')){
         //jah caesar :13; abcd
@@ -513,11 +513,12 @@ client.on('message', message => {
                 {
                 name:"frc2dec",
                 value:"converts positive fractions to decimals <jah frc2dec (1-1/2 or 1/2 etc)> "
-                },
-                {
-                name:"power",
-                value:"exponetiates a number to the nth power <jah power :number; power>"
                 }
+//                 ,
+//                 {
+//                 name:"power",
+//                 value:"exponetiates a number to the nth power <jah power :number; power>"
+//                 }
             ],
             timestamp: new Date(),
             footer: {
