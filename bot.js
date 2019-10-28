@@ -317,7 +317,7 @@ client.on('message', message => {
             if(!isNaN(num)){
                 return num;
             }else if(isNaN(num)){
-                message.reply("Please use an integer jah power :power; number").catch(console.error);     
+                message.reply("Please use an integer jah power :number; power").catch(console.error);     
             }
         }
         message.channel.send(power(num, pow)).catch(console.error);
@@ -513,6 +513,10 @@ client.on('message', message => {
                 {
                 name:"frc2dec",
                 value:"converts positive fractions to decimals <jah frc2dec (1-1/2 or 1/2 etc)> "
+                },
+                {
+                name:"power",
+                value:"exponetiates a number to the nth power <jah power :number; power>"
                 }
             ],
             timestamp: new Date(),
