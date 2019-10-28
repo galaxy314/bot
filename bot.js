@@ -516,12 +516,11 @@ client.on('message', message => {
                 {
                 name:"frc2dec",
                 value:"converts positive fractions to decimals <jah frc2dec (1-1/2 or 1/2 etc)> "
+                },
+                {
+                name:"power",
+                value:"exponetiates a number to the nth power <jah power :number; power>"
                 }
-//                 ,
-//                 {
-//                 name:"power",
-//                 value:"exponetiates a number to the nth power <jah power :number; power>"
-//                 }
             ],
             timestamp: new Date(),
             footer: {
