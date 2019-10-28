@@ -306,8 +306,8 @@ client.on('message', message => {
     
     if(message.content.startsWith('jah power')){
         let str = message.content;
-        let pow = parseInt(getPow);
         let getPow = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";"));
+        let pow = parseInt(getPow);
         let num = message.content.substr(str.lastIndexOf(";") + 1);
         
         function power(num, pow){
