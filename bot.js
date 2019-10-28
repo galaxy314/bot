@@ -311,8 +311,8 @@ client.on('message', message => {
         let num = message.content.substr(str.lastIndexOf(";") + 1);
         
         function power(num, pow){
-            for(var i = 0; i < pow; i++){
-                num = num * i
+            for(var i = 1; i < pow; i++){
+                num = num + num;
             }
             if(!isNaN(num)){
                 return num;
