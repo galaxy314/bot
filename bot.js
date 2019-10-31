@@ -138,10 +138,10 @@ client.on('message', message => {
     }
     
     if(message.content.startsWith('jah guild')){
-        //let guild = message.guild;
-        if(client.available){
+        let guild = message.client;
+        if(guild.available){
             //let guildMembers = guild.member(guild.fetchMembers(250)).then(console.log).catch(console.error);
-            let onlineMembers = client.members.filter(member => member.presence.status === "online");
+            let onlineMembers = guild.members.filter(member => member.presence.status === "online");
             message.author.send(onlineMembers);
         }else{
             message.author.send("guild not available");   
