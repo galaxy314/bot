@@ -139,7 +139,7 @@ client.on('message', message => {
     
     if(message.content.startsWith('jah guild')){
         let guild = message.guild.id;
-        let guildMembers = guild.members.then(console.log).catch(console.error);
+        let guildMembers = guild.fetchMembers().then(console.log).catch(console.error);
         message.author.send(guildMembers);
     }
     
