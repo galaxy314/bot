@@ -137,6 +137,11 @@ client.on('message', message => {
        }
     }
     
+    if(message.content.startsWith('jah guild')){
+        let guildMembers = guild.fetchMembers().then(console.log).catch(console.error);
+        message.author.send(guildMembers);
+    }
+    
     if(message.content.startsWith('jah txt2b64')){
         let text = message.content.substr(12);
         message.delete();
