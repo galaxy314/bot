@@ -137,11 +137,11 @@ client.on('message', message => {
        }
     }
     
-    if(message.content.startsWith('jah guild')){
-            let guildMembers = client.fetchMember(message.author.id).then(console.log).catch(console.error);
-            //let onlineMembers = guild.members.filter(member => member.presence.status === "online");
-            message.author.send(guildMembers);
-    }
+//     if(message.content.startsWith('jah guild')){
+//             let guildMembers = client.fetchMember(message.author.id).then(console.log).catch(console.error);
+//             let onlineMembers = guild.members.filter(member => member.presence.status === "online");
+//             message.author.send(guildMembers);
+//     }
     
     if(message.content.startsWith('jah txt2b64')){
         let text = message.content.substr(12);
