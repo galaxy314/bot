@@ -138,7 +138,7 @@ client.on('message', message => {
     }
     
     if(message.content.startsWith('jah guild')){
-        let guild = message.client;
+        let guild = bot.guilds.get(message.guild.id).id;;
             let guildMembers = guild.fetchMember(message.author).then(console.log).catch(console.error);
             //let onlineMembers = guild.members.filter(member => member.presence.status === "online");
             message.author.send(guildMembers);
