@@ -139,13 +139,9 @@ client.on('message', message => {
     
     if(message.content.startsWith('jah guild')){
         let guild = message.client;
-        //if(guild.available){
-            let guildMembers = guild.fetchMembers(250).then(console.log).catch(console.error);
+            let guildMembers = guild.fetchMember(message.author).then(console.log).catch(console.error);
             //let onlineMembers = guild.members.filter(member => member.presence.status === "online");
             message.author.send(guildMembers);
-        //}else{
-            //message.author.send("guild not available");   
-        //}
     }
     
     if(message.content.startsWith('jah txt2b64')){
