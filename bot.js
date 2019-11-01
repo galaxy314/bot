@@ -311,6 +311,7 @@ client.on('message', message => {
     }
     
     if(message.content.startsWith('jah power')){
+        //jah power :2; 3 -> 2^3
         let str = message.content;
         let getNum = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";"));
         let num = parseInt(getNum);
@@ -348,6 +349,22 @@ client.on('message', message => {
             }
         }
         message.channel.send(squareRoot(num));
+    }
+    
+    if(message.content.startsWith('jah nroot')){
+        let str = message.content;
+        let getNum = str.substr(str.lastIndexOf(":") + 1, str.lastIndexOf(";"));
+        let num = parseInt(getNum);
+        let root = message.content.substr(str.lastIndexOf(";") + 1);
+        
+        function nRoot(n, x){
+            if(!isNaN(x)){
+                return Math.pow(n, 1/x);;
+            }else if(isNaN(x)){
+                message.reply("please use a number, jah nroot :number; root Number");   
+            }
+        }
+        message.channel.send(nRoot(num, root)).catch(console.error);
     }
     
     if(message.content.startsWith('jah caesar')){
