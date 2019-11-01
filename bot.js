@@ -359,7 +359,7 @@ client.on('message', message => {
         
         function nRoot(n, x){
             if(!isNaN(x)){
-                return Math.pow(n, 1/x);;
+                return Math.pow(n, 1/x);
             }else if(isNaN(x)){
                 message.reply("please use a number, jah nroot :number; root Number");   
             }
