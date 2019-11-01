@@ -561,6 +561,10 @@ client.on('message', message => {
                 {
                 name:"power",
                 value:"exponetiates a number to the nth power <jah power :number; power>"
+                },
+                {
+                name:"nroot",
+                value:"takes the nth root of a number <jah nroot :number; root number (2, 3, 69, etc)>"
                 }
             ],
             timestamp: new Date(),
