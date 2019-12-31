@@ -448,7 +448,7 @@ client.on('message', message => {
         .catch(console.error);
     }
     if(command.includes('fortnite')){
-       message.channel.send(`stfu fortnite's a horrible game ${message.author}, and you know it);
+       message.channel.send(`stfu fortnite's a horrible game ${message.author}, and you know it`);
     }else if(message.author.id === '200791454950490112' && command.includes('fortnite')){
         message.channel.send(`stfu ${message.author}, you fucking furry`);
     }
