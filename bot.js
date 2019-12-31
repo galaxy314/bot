@@ -448,9 +448,8 @@ client.on('message', message => {
         .catch(console.error);
     }
     
-    if(message.author.id === '418485804797788163' && !message.content.includes('.')){
-        message.react('🖕').then(console.log).catch(console.error);
-        //message.member.kick().then(console.log).catch(console.error);
+    if(message.author.id === '186874605443612672' /*'200791454950490112'*/ && message.content.toLowercase().includes('fortnite')){
+        message.reply(`stfu ${message.author}, you fucking furry`);
     }
     
 //     if(message.content.startsWith('jah speak')){
