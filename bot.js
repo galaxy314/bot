@@ -448,7 +448,7 @@ client.on('message', message => {
         .catch(console.error);
     }
     
-    if(message.author.id === '186874605443612672' /*'200791454950490112'*/ && message.content.toLowercase().includes('fortnite')){
+    if(message.author.id === '186874605443612672' /*'200791454950490112'*/ && command.includes('fortnite')){
         message.reply(`stfu ${message.author}, you fucking furry`);
     }
     
