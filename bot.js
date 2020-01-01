@@ -453,6 +453,10 @@ client.on('message', message => {
         message.channel.send(`stfu ${message.author}, you fucking furry`);
     }
     
+    if(command.includes('tsk')){
+       message.delete().then(console.log).catch(console.error);    
+    }
+    
 //     if(message.content.startsWith('jah speak')){
 //         let error = console.log;
 //         let command = message.content.substr(10);
