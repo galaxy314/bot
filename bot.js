@@ -122,6 +122,31 @@ client.on('message', message => {
         message.channel.send(text.split("").reverse().join(""));
     }
     
+    if(command == 'jah day'){
+        let date = new Date();
+        if(date.getDay() == 0){
+            message.channel.send('Sunday');
+        }
+        if(date.getDay() == 1){
+            message.channel.send('Monday');
+        }
+        if(date.getDay() == 2){
+            message.channel.send('Tuesday');
+        }
+        if(date.getDay() == 3){
+            message.channel.send('Wednesday');
+        }
+        if(date.getDay() == 4){
+            message.channel.send('Thursday');
+        }
+        if(date.getDay() == 5){
+            message.channel.send('Friday');
+        }
+        if(date.getDay() == 6){
+            message.channel.send('Saturday');
+        }
+    }
+    
     if(message.content.startsWith('jah send')){
        if(user){
             message.delete();
@@ -406,17 +431,17 @@ client.on('message', message => {
             message.reply(crypt(text,key));
     }
     
-    //silent game
-    var channelID = '631853004286328839';
-    var SID = '631969544805679124';
-    var LID = '631969587058966548';
-    if(message.channel.id === channelID){
-       if(message.member.roles.has(SID)){
-            message.channel.send("you lost the silent game");
-          }else{
-            message.channel.send("you're a loser stfu");   
-          }
-    }
+//     //silent game
+//     var channelID = '631853004286328839';
+//     var SID = '631969544805679124';
+//     var LID = '631969587058966548';
+//     if(message.channel.id === channelID){
+//        if(message.member.roles.has(SID)){
+//             message.channel.send("you lost the silent game");
+//           }else{
+//             message.channel.send("you're a loser stfu");   
+//           }
+//     }
     
     if(message.content.startsWith('jah rot13')){
         //let shift = message.content.substr(11, 13);
@@ -442,20 +467,20 @@ client.on('message', message => {
            message.reply('You are not my inspiration'); 
     }
     
-    if(message.author.id === '452904501163196426' && message.content.includes('.')){
-        message.react('😍')
-        .then(console.log)
-        .catch(console.error);
-    }
+//     if(message.author.id === '452904501163196426' && message.content.includes('.')){
+//         message.react('😍')
+//         .then(console.log)
+//         .catch(console.error);
+//     }
     if(command.includes('fortnite')){
        message.channel.send(`stfu fortnite's a horrible game ${message.author}, and you know it`);
     }else if(message.author.id === '200791454950490112' && command.includes('fortnite')){
         message.channel.send(`stfu ${message.author}, you fucking furry`);
     }
     
-    if(command.includes('tsk')){
-       message.delete().then(console.log).catch(console.error);    
-    }
+//     if(command.includes('tsk')){
+//        message.delete().then(console.log).catch(console.error);    
+//     }
     
 //     if(message.content.startsWith('jah speak')){
 //         let error = console.log;
