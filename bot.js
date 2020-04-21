@@ -150,8 +150,8 @@ client.on('message', message => {
     //dope gaming server friday msg
     let date = new Date();
     let serverID = client.guilds.id;
-    if(serverID == '194509162669932544'){
-        if(command == 'jah friday' || date.getDay() == 5){
+    if(command == 'jah friday' || date.getDay() == 5){
+        if(serverID == '194509162669932544'){
             message.channel.send('Friday nigga ball out');
         }
     }
