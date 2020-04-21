@@ -152,7 +152,7 @@ client.on('message', message => {
     let serverID = client.guilds.id;
     if(command == 'jah friday' || date.getDay() == 5){
         if(serverID == '194509162669932544'){
-            message.channel.send('Friday nigga ball out');
+            message.channel.send('Friday nigga ball out').then(console.log).catch(console.error);
         }
     }
     
