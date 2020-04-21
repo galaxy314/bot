@@ -149,12 +149,12 @@ client.on('message', message => {
     
     //dope gaming server friday msg
     let date = new Date();
-    let serverID = client.guilds.id;
+    let serverID = client.guilds;
     if(command == 'jah friday' || date.getDay() == 5){
-        if(serverID == '194509162669932544'){
+        if(serverID == message.guild.id){
             message.channel.send('Friday nigga ball out').then(console.log).catch(console.error);
         }
-    }.then(console.log).catch(console.error)
+    }
     
     if(message.content.startsWith('jah send')){
        if(user){
