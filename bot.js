@@ -154,7 +154,7 @@ client.on('message', message => {
         if(serverID == '194509162669932544'){
             message.channel.send('Friday nigga ball out').then(console.log).catch(console.error);
         }
-    }
+    }.then(console.log).catch(console.error)
     
     if(message.content.startsWith('jah send')){
        if(user){
