@@ -156,9 +156,12 @@ client.on('message', message => {
         }
         message.channel.send(str).then(console.log).catch(console.error);
     }
-    
+    let count = 0;
     if(date.getDay() == 2){
-        client.channels.get('188735217115201536').send('hey').then(console.log).catch(console.error);
+        if(count == 0){
+            client.channels.get('188735217115201536').send('hey').then(console.log).catch(console.error);
+            count++;
+        }
     }
     
     if(message.content.startsWith('jah send')){
