@@ -149,19 +149,9 @@ client.on('message', message => {
     
     //dope gaming server friday msg
     let date = new Date();
-    if(command == 'jah friday' || date.getDay() == 5){
+    if(command == 'jah friday'){
         let str = 'Friday nigga ball out';
-        if(date.getDay() == 5){
-            client.channels.get('194509162669932544').send(str).then(console.log).catch(console.error);
-        }
         message.channel.send(str).then(console.log).catch(console.error);
-    }
-    const count = 0;
-    if(date.getDay() == 2){
-        if(count == 0){
-            client.channels.get('188735217115201536').send('hey').then(console.log).catch(console.error);
-            count++;
-        }
     }
     
     if(message.content.startsWith('jah send')){
