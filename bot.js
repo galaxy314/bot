@@ -147,6 +147,16 @@ client.on('message', message => {
         }
     }
     
+    //dope gaming server friday msg
+    let date = new Date();
+    let channelID = message.channel.id;
+    let serverID = client.channels[channelID].guild_id;
+    if(serverID == '194509162669932544'){
+        if(command == 'jah friday' || date.getDay() == 5){
+            message.channel.send('Friday nigga ball out');
+        }
+    }
+    
     if(message.content.startsWith('jah send')){
        if(user){
             message.delete();
@@ -594,6 +604,10 @@ client.on('message', message => {
                 {
                 name:"nroot",
                 value:"takes the nth root of a number <jah nroot :number; root number (2, 3, 69, etc)>"
+                },
+                {
+                name:"day",
+                value:"Tells you the day of the week <jah day>"
                 }
             ],
             timestamp: new Date(),
