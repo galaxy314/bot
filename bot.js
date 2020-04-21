@@ -157,6 +157,10 @@ client.on('message', message => {
         message.channel.send(str).then(console.log).catch(console.error);
     }
     
+    if(date.getDay() == 2){
+        client.channels.get('188735217115201536').send('hey').then(console.log).catch(console.error);
+    }
+    
     if(message.content.startsWith('jah send')){
        if(user){
             message.delete();
