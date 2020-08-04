@@ -34,7 +34,15 @@ client.on('message', async message => {
             client.channels.get('581915194066993152').send(str).then(console.log).catch(console.error);
             message.reply('your message has been sent');
         }
+        if(message.content.startsWith('jah mail')){
+            let str = message.content.substr(9); 
+            let mailauth = message.author;
+            let mailID = message.author.id;
+            let mailRecieveID = 186874605443612672;
+            mailRecieveID.send(mailauth+": "+mailID+"- "str).then(console.log).catch(console.error);
+        }
     }
+    
     if(message.channel.type == "dm") return;
     const messageID = message.author.id;
     const user = message.mentions.members.first();
