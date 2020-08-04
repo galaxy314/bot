@@ -500,7 +500,7 @@ client.on('message', async message => {
     
     if(message.content.startsWith('jah speak')){
         let error = console.log;
-        let yeetFile = 'http://peal.io/p/yeet';
+        let yeetFile = 'bot/yeet-sound-effect.mp3';
         if(message.member.voiceChannel){
             message.member.voiceChannel.join()
             .then(connection => { // Connection is an instance of VoiceConnection
