@@ -24,7 +24,7 @@ client.on('guildMemberRemove', member =>{
     channel.send(`later ,${member}, what a loser`);
 });
 
-client.on('message', async message => {
+client.on('message', message => {
     if (message.author.bot) return;
      
     //confession bot thing
@@ -39,7 +39,7 @@ client.on('message', async message => {
             let mailauth = message.author;
             let mailID = message.author.id;
             let mailRecieveID = 186874605443612672;
-            mailRecieveID.send(mailauth+": "+mailID+"- "+str).then(console.log).catch(console.error);
+            client.users.get(mailRecieveID).send(mailauth+": "+mailID+"- "+str).then(console.log).catch(console.error);
         }
     }
     
