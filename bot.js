@@ -489,38 +489,38 @@ client.on('message', async message => {
 //        message.delete().then(console.log).catch(console.error);    
 //     }
     
-        if (message.content === 'jah join') {
-        // Only try to join the sender's voice channel if they are in one themselves
-            if (message.member.voice.channel) {
-                const connection = await message.member.voice.channel.join();
-        } else {
-          message.reply('You need to join a voice channel first!');
+//         if (message.content === 'jah join') {
+//         // Only try to join the sender's voice channel if they are in one themselves
+//             if (message.member.voice.channel) {
+//                 const connection = await message.member.voice.channel.join();
+//         } else {
+//           message.reply('You need to join a voice channel first!');
+//         }
+//       }
+    
+    if(message.content.startsWith('jah speak')){
+        let error = console.log;
+        let yeetFile = 'http://peal.io/p/yeet';
+        if(message.member.voiceChannel){
+            message.member.voiceChannel.join()
+            .then(connection => { // Connection is an instance of VoiceConnection
+                message.reply('I have successfully connected to the channel!');
+                connection.playArbitraryInput(yeetFile);
+            })
+            .catch(error);
+            //message.reply(error)
+        }else{
+            message.reply('you need to be in a voice channel for me to join');   
         }
-      }
+    }
     
-//     if(message.content.startsWith('jah speak')){
-//         let error = console.log;
-//         let yeetFile = 'http://peal.io/p/yeet';
-//         if(message.member.voiceChannel){
-//             message.member.voiceChannel.join()
-//             .then(connection => { // Connection is an instance of VoiceConnection
-//                 message.reply('I have successfully connected to the channel!');
-//                 connection.playArbitraryInput(yeetFile);
-//             })
-//             .catch(error);
-//             //message.reply(error)
-//         }else{
-//             message.reply('you need to be in a voice channel for me to join');   
-//         }
-//     }
-    
-//     if(command === 'jah stop'){
-//         if(message.guild.voiceConnection){
-//             message.guild.voiceConnection.disconnect();   
-//         }else{
-//             message.reply('I must be in a voice channel to be disconnected');   
-//         }
-//     }
+    if(command === 'jah stop'){
+        if(message.guild.voiceConnection){
+            message.guild.voiceConnection.disconnect();   
+        }else{
+            message.reply('I must be in a voice channel to be disconnected');   
+        }
+    }
     
     if(command === 'jah help'){
             message.channel.send({embed: {
