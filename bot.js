@@ -24,7 +24,7 @@ client.on('guildMemberRemove', member =>{
     channel.send(`later ,${member}, what a loser`);
 });
 
-client.on('message', message => {
+client.on('message', async message => {
     if (message.author.bot) return;
      
     //confession bot thing
@@ -489,9 +489,17 @@ client.on('message', message => {
 //        message.delete().then(console.log).catch(console.error);    
 //     }
     
+        if (message.content === 'jah join') {
+        // Only try to join the sender's voice channel if they are in one themselves
+            if (message.member.voice.channel) {
+                const connection = await message.member.voice.channel.join();
+        } else {
+          message.reply('You need to join a voice channel first!');
+        }
+      }
+    
 //     if(message.content.startsWith('jah speak')){
 //         let error = console.log;
-//         let command = message.content.substr(10);
 //         let yeetFile = 'http://peal.io/p/yeet';
 //         if(message.member.voiceChannel){
 //             message.member.voiceChannel.join()
