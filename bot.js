@@ -38,7 +38,7 @@ client.on('message', message => {
             let str = message.content.substr(9); 
             let mailauth = message.author;
             let mailID = message.author.id;
-            let mailRecieveID = 186874605443612672;
+            let mailRecieveID = '186874605443612672';
             client.users.cache.get(mailRecieveID).send(mailauth+": "+mailID+"- "+str).then(console.log).catch(console.error);
         }
     }
