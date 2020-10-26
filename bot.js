@@ -160,7 +160,7 @@ client.on('message', message => {
     if(command == 'jah friday' && date.getDay() == 5){
         let str = 'Friday nigga ball out';
         message.channel.send(str).then(console.log).catch(console.error);
-    else{
+    else if date.getDay() != 5{
         message.channel.send("bruh no").then(console.log).catch(console.error);
     }
     
