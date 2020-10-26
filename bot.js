@@ -157,9 +157,11 @@ client.on('message', message => {
     
     //dope gaming server friday msg
     let date = new Date();
-    if(command == 'jah friday'){
+    if(command == 'jah friday' && date.getDay() == 5){
         let str = 'Friday nigga ball out';
         message.channel.send(str).then(console.log).catch(console.error);
+    else{
+        message.channel.send("bruh no").then(console.log).catch(console.error);
     }
     
     if(message.content.startsWith('jah send')){
@@ -476,22 +478,22 @@ client.on('message', message => {
         message.reply('You are not my creator');
     }
     
-    if(messageID === '452904501163196426' && command === 'jah inspire'){
-           message.reply('Mom?');
-    }else if(messageID !== '452904501163196426' && command === 'jah inspire'){
-           message.reply('You are not my inspiration'); 
-    }
+//     if(messageID === '452904501163196426' && command === 'jah inspire'){
+//            message.reply('Mom?');
+//     }else if(messageID !== '452904501163196426' && command === 'jah inspire'){
+//            message.reply('You are not my inspiration'); 
+//     }
     
 //     if(message.author.id === '452904501163196426' && message.content.includes('.')){
 //         message.react('😍')
 //         .then(console.log)
 //         .catch(console.error);
 //     }
-    if(command.includes('fortnite')){
-       message.channel.send(`stfu fortnite's a horrible game ${message.author}, and you know it`);
-    }else if(message.author.id === '200791454950490112' && command.includes('fortnite')){
-        message.channel.send(`stfu ${message.author}, you fucking furry`);
-    }
+//     if(command.includes('fortnite')){
+//        message.channel.send(`stfu fortnite's a horrible game ${message.author}, and you know it`);
+//     }else if(message.author.id === '200791454950490112' && command.includes('fortnite')){
+//         message.channel.send(`stfu ${message.author}, you fucking furry`);
+//     }
     
 //     if(command.includes('tsk')){
 //        message.delete().then(console.log).catch(console.error);    
