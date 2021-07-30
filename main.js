@@ -16,9 +16,10 @@ client.on('message', message => {
   if(!command.startsWith(prefix)) return;
     
   if(command.substr(6) == 'react'){
-      message.react('🇪').then(console.log).catch(console.error);
-      message.react('🇭').then(console.log).catch(console.error);
-      message.react('🇾').then(console.log).catch(console.error);
+      message.react('🇭')
+        .then(() => message.react('🇪'))
+        .then(() => message.react('🇾'))
+        .catch(error => console.error('one of the emotes failed to react', error));
   }
   
 });
