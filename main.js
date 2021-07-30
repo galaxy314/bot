@@ -13,7 +13,7 @@ client.on('message', message => {
   const command = message.content.toLowerCase();
   const prefix = 'spoon'
   if(command == prefix + ' create-web'){
-    channel.createWebhook('spoon', {
+    message.channel.createWebhook('spoon', {
       avatar:'shorturl.at/lvJL4',
       reason:'testing'
     }).then(console.log).catch(console.error)
