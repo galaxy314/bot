@@ -17,8 +17,8 @@ client.on('message', message => {
     
   if(command.substr(6) == 'react'){
       message.react('🇪').then(console.log).catch(console.error);
-      message.react('🇭').then(console.log).catch(console.error);
       message.react('🇾').then(console.log).catch(console.error);
+      message.react('🇭').then(console.log).catch(console.error);
   }
   
 });
