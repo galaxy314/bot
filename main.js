@@ -16,11 +16,11 @@ client.on('message', message => {
   if(!command.startsWith(prefix)) return;
     
   if(command.substr(6) == 'react'){
-      message.react(message.guild.emojis.cache.get('870640704450363403')).then(console.log).catch(console.error);//S
-      message.react(message.guild.emojis.cache.get('870641082386501723')).then(console.log).catch(console.error);//P
-      message.react(message.guild.emojis.cache.get('870641111230722098')).then(console.log).catch(console.error);//O
-      message.react(message.guild.emojis.cache.get('870641111230722098')).then(console.log).catch(console.error);//O
-      message.react(message.guild.emojis.cache.get('870641137881317436')).then(console.log).catch(console.error);//N
+      message.react(🇸).then(console.log).catch(console.error);//S
+      message.react(🇵).then(console.log).catch(console.error);//P
+      message.react(🇴).then(console.log).catch(console.error);//O
+      message.react(🇴).then(console.log).catch(console.error);//O
+      message.react(🇳).then(console.log).catch(console.error);//N
   }
   
 });
