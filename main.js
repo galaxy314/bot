@@ -12,7 +12,7 @@ client.on('message', message => {
   //command var; all commands in lowercase
   const command = message.content.toLowerCase();
   const prefix = 'spoon'
-  if(command = prefix + ' create-web'){
+  if(command == prefix + ' create-web'){
     channel.createWebhook('spoon', {
       avatar:'shorturl.at/lvJL4',
       reason:'testing'
