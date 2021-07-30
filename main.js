@@ -16,11 +16,11 @@ client.on('message', message => {
   if(!command.startsWith(prefix)) return;
     
   if(command.substr(6) == 'react'){
-      message.react(🇸).then(console.log).catch(console.error);//S
-      message.react(🇵).then(console.log).catch(console.error);//P
-      message.react(🇴).then(console.log).catch(console.error);//O
-      message.react(🇴).then(console.log).catch(console.error);//O
-      message.react(🇳).then(console.log).catch(console.error);//N
+      message.react('🇸').then(console.log).catch(console.error);//S
+      message.react('🇵').then(console.log).catch(console.error);//P
+      message.react('🇴').then(console.log).catch(console.error);//O
+      message.react('🇴').then(console.log).catch(console.error);//O
+      message.react('🇳').then(console.log).catch(console.error);//N
   }
   
 });
